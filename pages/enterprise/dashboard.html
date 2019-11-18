@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Dashboard | CAPTOR</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="../../Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../Content/css/animate.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+    <link href="../../Content/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+    <link href="../../Content/css/main.min.css" rel="stylesheet" />
+	
+	<!--[if lt IE 9]>
+	    <script src="../../Content/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="../../Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="../../Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="../../Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="../../Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="navbar-default">
+    <div class="overlay"></div>
+
+	<div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+
+    <div id="page-container" class="fade page-container dashboard-page page-header-fixed page-sidebar-fixed page-with-footer page-footer-fixed page-right-sidebar-fixed ">
+        <div id="header" class="header navbar navbar-fixed-top navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="keyword">
+                        <form class="navbar-form form-input-flat">
+                            <div class="form-group search">
+                                <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                <span class="icon"></span>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle has-notify" data-click="toggle-notify">
+                            <span class="notifications-menu"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-notification pull-right">
+                            <li class="dropdown-header">Notifications (4)</li>
+                            <li class="notification-item general-notification">
+                                <a href="#">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Notification</h6>
+                                        <p class="desc">Server down on 1/24/2016.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item tasks-notification">
+                                <a href="javascript:;">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Task</h6>
+                                        <p class="desc">One or more OVAM tasks added.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item calendar-notification">
+                                <a href="calendar.html">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Events</h6>
+                                        <p class="desc">New event posted.</p>
+                                        <div class="time">34 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item subscription-notification">
+                                <a href="email_inbox.html">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Subscriptions</h6>
+                                        <p class="desc">You are now subscribed.</p>
+                                        <div class="time">2 hour ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="email_inbox.html">View more</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">John Smith</span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="my-profile"><a href="profile.html"><span> My Profile</span></a></li>
+                            <li class="my-inbox"><a href="email_inbox.html"><span> My Notifications</span></a></li>
+                            <li class="my-options"><a href="#"><span> My Options</span></a></li>
+                            <li class="my-settings"><a href="settings.html"><span> My Settings</span></a></li>
+                            <li class="divider"></li>
+                            <li class="logout"><a href="../../index.html"><span> Log Out</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav">
+                    <li class="nav-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../Content/img/captorlogo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="mini-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../Content/img/mini-logo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="divider has-minify-btn">
+                        <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><span></span></a>
+                    </li>
+                    <li class="sidebar-menu-item search has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span>Search Menu</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <form class="navbar-form form-input-flat">
+                                    <div class="form-group search">
+                                        <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                        <span class="icon"></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">Navigation</li>
+                    <li class="sidebar-menu-item dashboard">
+                        <a href="dashboard.html">
+                            <span class="icon"></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item search-offender">
+                        <a href="../enterprise/individual-offender-case-notes-process.html">
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Individual Offender Search</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item bulk-offender has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Bulk Case Notes</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="sidebar-menu-item">
+                                <a href="../../pages/case-notes/bulk-note.html">Bulk Note</a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a href="../../pages/case-notes/bulk-contact.html">Bulk Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-bg"></div>
+
+        <div id="content" class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="dashboard-page-header page-header col-xs-12"><span>Dashboard</span></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4 class="text-white note-widget-title"><span>Create A Note</span></h4>
+                        </div>
+                        <div class="widget-body">
+                            <form class="form-input-flat" method="POST" name="sample_form">
+                                <div class="form-group">
+                                    <label class="control-label">Search Offender</label>
+                                    <div class="input-group controls">
+                                        <span class="input-group-addon left search"></span>
+                                        <input type="text" class="form-control" placeholder="Search by Name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Comment</label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="m-b-10 p-b-2">
+                                    <button type="submit" class="btn btn-default btn-round btn-block btn-lg">Quick Post</button>
+                                </div>
+                                <p class="help-block text-muted f-s-11 m-b-0">
+                                    <span class="text-danger">*</span> Do not use this to complete a PBPP259. Refer to <a href="individual-offender-case-notes-process.html">Case Notes Menu</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h4 class="calendar-widget-title text-white"><span>My Calendar</span></h4>
+                        </div>
+                        <div class="widget-body">
+                            <div class="fullcalendar">
+                                <div class="fullcalendar-container">
+                                    <div id='calendar'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h4 class="notification-widget-title text-white"><span>Today's Notifications</span></h4>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="notification-list">
+                                <li class="notification-item email-notification">
+                                    <a>
+                                        <div class="media"><span class="icon"></span></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Your scheduled needs published</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span class="link"><a href="#">Access your schedule here</a></span></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item user-notification">
+                                    <a>
+                                        <div class="media"><span class="icon"></span></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Case Note Added - John Smith</a></div>
+                                            <div class="time"><span>Today, 7.08am</span></div>
+                                            <div class="desc"><span>Lorem ipsum nor thiurom fot...</span></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item user-notification">
+                                    <a>
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">Contact Added - Paul Jones</a></div>
+                                        <div class="time"><span>Today, 5.40am</span></div>
+                                        <div class="desc"><span>Entered by Irene White.</span></div>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item general-notification">
+                                    <a>
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">Case Note Restriction lifted</a></div>
+                                        <div class="time"><span>Today, 5.40am</span></div>
+                                        <div class="desc"><span>Normal access restored</span></div>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item absconder-notification danger">
+                                    <a>
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">ABSCONDER</a></div>
+                                        <div class="time"><span>Today, 5.40am</span></div>
+                                        <div class="desc"><span>ATTENTION: A new absconder record has been added</span></div>
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h4 class="tasks-widget-title text-white"><span>Tasks</span></h4>
+                        </div>
+                        <div class="widget-body">
+                            <ul class="project-list">
+                                <li>
+                                    <div class="icon"><i class="fa fa-circle-o text-danger"></i></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">Contact Note</a></div>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
+                                        </div>
+                                        <div class="desc"><span>Contact created on offender</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fa fa-circle-o text-info"></i></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">Case Note</a></div>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-info" style="width: 60%"></div>
+                                        </div>
+                                        <div class="desc"><span>Case Note waiting on information </span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fa fa-circle-o text-success"></i></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">STG Association Approval</a></div>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                        </div>
+                                        <div class="desc"><span>STG association created. Only waiting for approval</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fa fa-circle-o text-done"></i></div>
+                                    <div class="info">
+                                        <div class="title"><a href="javascript:;">Photos Added</a></div>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-done" style="width: 100%"></div>
+                                        </div>
+                                        <div class="desc"><span>This project is completed</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="widget">
+                        <div class="widget-header">
+                            <h4 class="search-widget-title text-white"><span>Staff Search</span></h4>
+                        </div>
+                        <div class="widget-body p-b-15">
+                            <form class="form-input-flat" method="POST" name="sample_form">
+                                <div class="form-group">
+                                    <label class="control-label">First Name</label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Last Name</label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="m-b-10 p-b-2">
+                                    <button type="submit" class="btn btn-default btn-round btn-block btn-lg">Search</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="footer">
+                <span class="pull-right">
+                    <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                        <i class="fa ion-chevron-up"></i> <span class="hidden-xs">Back to Top</span>
+                    </a>
+                </span>
+                &copy; 2016 <b>CAPTOR - Commonwealth of Pennsylvania</b> All Rights Reserved
+            </div>
+        </div>
+    </div>
+	
+	<script src="../../Content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-datetimepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../Content/plugins/jquery.sticky.js"></script>
+    <script src="../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../Content/js/apps-custom.js"></script>
+    <script src="../../Content/js/apps-alert-notifications.js"></script>
+    <script src="../../Content/js/apps-dashboard.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+		    App.init();
+            AlertNotifications.init();
+		});
+
+		
+
+	</script>
+</body>
+</html>

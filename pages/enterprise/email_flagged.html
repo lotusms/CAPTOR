@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>My Notifications | CAPTOR</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+
+        <!-- ================== BEGIN BASE CSS STYLE ================== -->
+        <link href="../../Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+        <link href="../../Content/css/animate.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-datetimepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+        <link href="../../Content/css/main.min.css" rel="stylesheet" />
+
+	
+	    <!--[if lt IE 9]>
+	        <script src="Content/crossbrowserjs/excanvas.min.js"></script>
+	    <![endif]-->
+
+        <!-- ================== BEGIN BASE JS ================== -->
+        <script src="../../Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+        <script src="../../Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+        <script src="../../Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+        <script src="../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <!--[if lt IE 9]>
+            <script src="Content/crossbrowserjs/html5shiv.js"></script>
+            <script src="Content/crossbrowserjs/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body class="navbar-default">
+        <div class="overlay"></div>
+
+        <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+        <div id="page-container" class="fade page-container dashboard-page page-header-fixed page-sidebar-fixed page-with-footer page-footer-fixed page-right-sidebar-fixed ">
+            <div id="header" class="header navbar navbar-fixed-top navbar-default">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="keyword">
+                            <form class="navbar-form form-input-flat">
+                                <div class="form-group search">
+                                    <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                    <span class="icon"></span>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle has-notify" data-click="toggle-notify">
+                                <span class="notifications-menu"></span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-notification pull-right">
+                                <li class="dropdown-header">Notifications (4)</li>
+                                <li class="notification-item general-notification">
+                                    <a href="#">
+                                        <div class="media"><span class="icon"></span></div>
+                                        <div class="message">
+                                            <h6 class="title">Notification</h6>
+                                            <p class="desc">Server down on 1/24/2016.</p>
+                                            <div class="time">3 minutes ago</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-link"></i>
+                                            </div>
+                                            <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-eye"></i>
+                                            </div>
+                                            <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item tasks-notification">
+                                    <a href="javascript:;">
+                                        <div class="media bg-success"><span class="icon"></span></div>
+                                        <div class="message">
+                                            <h6 class="title">Task</h6>
+                                            <p class="desc">One or more OVAM tasks added.</p>
+                                            <div class="time">3 minutes ago</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-link"></i>
+                                            </div>
+                                            <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-eye"></i>
+                                            </div>
+                                            <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item calendar-notification">
+                                    <a href="calendar.html">
+                                        <div class="media"><span class="icon"></span></div>
+                                        <div class="message">
+                                            <h6 class="title">Events</h6>
+                                            <p class="desc">New event posted.</p>
+                                            <div class="time">34 minutes ago</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-link"></i>
+                                            </div>
+                                            <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-eye"></i>
+                                            </div>
+                                            <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-item subscription-notification">
+                                    <a href="email_inbox.html">
+                                        <div class="media bg-success"><span class="icon"></span></div>
+                                        <div class="message">
+                                            <h6 class="title">Subscriptions</h6>
+                                            <p class="desc">You are now subscribed.</p>
+                                            <div class="time">2 hour ago</div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-link"></i>
+                                            </div>
+                                            <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-eye"></i>
+                                            </div>
+                                            <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                                <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-footer text-center">
+                                    <a href="email_inbox.html">View more</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">John Smith</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li class="my-profile"><a href="#"><span> My Profile</span></a></li>
+                                <li class="my-inbox"><a href="email_inbox.html"><span> My Notifications</span></a></li>
+                                <li class="my-options"><a href="#"><span> My Options</span></a></li>
+                                <li class="my-settings"><a href="settings.html"><span> My Settings</span></a></li>
+                                <li class="divider"></li>
+                                <li class="logout"><a href="../../index.html"><span> Log Out</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="sidebar" class="sidebar">
+                <div data-scrollbar="true" data-height="100%">
+                    <ul class="nav">
+                        <li class="nav-logo">
+                            <a href="dashboard.html" class="logo"><img src="../../Content/img/captorlogo.png" class="logo" alt="" /> </a>
+                        </li>
+                        <li class="mini-logo">
+                            <a href="dashboard.html" class="logo"><img src="../../Content/img/mini-logo.png" class="logo" alt="" /> </a>
+                        </li>
+                        <li class="divider has-minify-btn">
+                            <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><span></span></a>
+                        </li>
+                        <li class="sidebar-menu-item search has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <span class="icon"></span>
+                                <span>Search Menu</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <form class="navbar-form form-input-flat">
+                                        <div class="form-group search">
+                                            <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                            <span class="icon"></span>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">Navigation</li>
+                        <li class="sidebar-menu-item dashboard">
+                            <a href="dashboard.html">
+                                <span class="icon"></span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item search-offender">
+                            <a href="individual-offender-case-notes-process.html">
+                                <span class="icon"></span>
+                                <span class="icon2"></span>
+                                <span>Individual Offender Search</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-menu-item bulk-offender has-sub">
+                            <a href="javascript:;">
+                                <b class="caret pull-right"></b>
+                                <span class="icon"></span>
+                                <span class="icon2"></span>
+                                <span>Bulk Case Notes</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="sidebar-menu-item">
+                                    <a href="../../pages/case-notes/bulk-note.html">Bulk Note</a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a href="../../pages/case-notes/bulk-contact.html">Bulk Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-bg"></div>
+
+            <div id="content" class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="notifications-page-header page-header col-xs-12"><span>Notifications</span></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="widget widget-notifications">
+                            <div class="widget-header">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <h4> Notifications Inbox</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-body clearfix">
+                                <div class="mail-box">
+                                    <div class="mail-box-sidebar">
+                                        <div class="notification-search">
+                                            <form class="navbar-form form-input-flat">
+                                                <div class="form-group search">
+                                                    <input type="text" class="form-control" placeholder="Search Notifications">
+                                                    <span class="icon"></span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="email-sidebar" id="email-sidebar" data-scrollbar="true" data-height="100%">
+                                            <h4 class="title m-t-0">FOLDER</h4>
+                                            <ul class="mail-box-menu">
+                                                <li><a href="email_inbox.html">Inbox <b>(3)</b></a></li>
+                                                <li><a href="email_read.html">Unread <b>(30)</b></a></li>
+                                                <li><a href="email_trash.html">Trash <b>(99+)</b></a></li>
+                                                <li class="active"><a href="#">Flagged <b>(2)</b></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mail-box-content">
+                                        <div class="mail-box-toolbar">
+                                            <div class="pull-left">
+                                                <a href="#" class="btn btn-secondary btn-sm btn-round no-icon" data-click="check-all">
+                                                    <i class="fa fa-square-o fa-lg fa-fw text-inverse"></i>
+                                                </a>
+                                                <span class="dropdown navbar-user">
+                                                    <a href="javascript:;" class="btn btn-secondary btn-sm btn-round no-icon dropdown-toggle" data-toggle="dropdown">
+                                                        Options <b class="caret"></b>
+                                                    </a>
+                                                    <ul class="dropdown-menu pull-right options-dropdown">
+                                                        <li class="read-icon"><a href="#"><span> Mark as read</span></a></li>
+                                                        <li class="trash-icon"><a href="#"><span> Send to trash</span></a></li>
+                                                        <li class="flag-icon"><a href="#"><span> Unflag notification</span></a></li>
+                                                    </ul>
+                                                </span>
+                                                <span class="dropdown navbar-user">
+                                                    <a href="javascript:;" class="btn btn-secondary btn-sm btn-round no-icon dropdown-toggle" data-toggle="dropdown">
+                                                        Sort by Date <b class="caret"></b>
+                                                    </a>
+                                                    <ul class="dropdown-menu pull-right options-dropdown">
+                                                        <li class="new-icon"><a href="#"><span> Most recent first</span></a></li>
+                                                        <li class="old-icon"><a href="#"><span> Oldest first</span></a></li>
+                                                    </ul>
+                                                </span>
+                                            </div>
+                                            <div class="pull-right">
+                                                <span class="btn-group">
+                                                    <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-left"></i></a>
+                                                    <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-right"></i></a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mail-box-container">
+                                            <div data-scrollbar="true" data-height="100%">
+                                                <table class="table-email">
+                                                    <tbody>
+                                                        <tr class="unread">
+                                                            <td class="email-checkbox">
+                                                                <input type="checkbox" name="email_checkbox" />
+                                                                <a href="javascript:;" data-toggle="email-checkbox"><i class="fa fa-square-o fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-delete">
+                                                                <a href="javascript:;" data-toggle="tooltip" data-title="Delete me" data-placement="top"><i class="fa ion-trash-b fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-flag">
+                                                                <a href="javascript:;" data-toggle="tooltip" data-title="Remove flag" data-placement="top"><i class="fa ion-ios-flag fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-sender">
+                                                                <a href="email_detail.html">Apple</a>
+                                                            </td>
+                                                            <td class="email-message">
+                                                                <a href="email_detail.html">
+                                                                    <span class="email-title">
+                                                                        Your payment is received -
+                                                                        <span class="email-desc">
+                                                                            Praesent id pulvinar orci. Donec ac metus non ligula faucibus venenatis. Suspendisse tortor est, placerat eu dui sed...
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                            <td class="email-attachment">
+                                                                <a href="email_detail.html">
+                                                                    <i class="fa fa-paperclip"></i>
+                                                                </a>
+                                                            </td>
+                                                            <td class="email-date">
+                                                                <a href="email_detail.html">Aug 12</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="unread">
+                                                            <td class="email-checkbox">
+                                                                <input type="checkbox" name="email_checkbox" />
+                                                                <a href="javascript:;" data-toggle="email-checkbox"><i class="fa fa-square-o fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-delete">
+                                                                <a href="javascript:;" data-toggle="tooltip" data-title="Delete me" data-placement="top"><i class="fa ion-trash-b fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-flag">
+                                                                <a href="javascript:;" data-toggle="tooltip" data-title="Remove flag" data-placement="top"><i class="fa ion-ios-flag fa-fw"></i></a>
+                                                            </td>
+                                                            <td class="email-sender">
+                                                                <a href="email_detail.html">iTunes</a>
+                                                            </td>
+                                                            <td class="email-message">
+                                                                <a href="email_detail.html">
+                                                                    <span class="email-title">
+                                                                        Get the Star Wars movie today -
+                                                                        <span class="email-desc">
+                                                                            Praesent id pulvinar orci. Donec ac metus non ligula faucibus venenatis. Suspendisse tortor est, placerat eu dui sed...
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                            <td class="email-attachment">
+                                                                <a href="email_detail.html">
+                                                                    <i class="fa fa-paperclip"></i>
+                                                                </a>
+                                                            </td>
+                                                            <td class="email-date">
+                                                                <a href="email_detail.html">Aug 12</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="../../Content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../Content/plugins/bootstrap-datetimepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../../Content/js/page-calendar.demo.min.js"></script>
+    <script src="../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../Content/plugins/jquery.sticky.js"></script>
+    <script src="../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../Content/js/apps-notifications.js"></script>
+    <script src="../../Content/js/apps-alert-notifications.js"></script>
+    <script src="../../Content/js/apps-custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+            Notifications.init();
+            AlertNotifications.init();
+        });
+    </script>
+</body>
+
+</html>
