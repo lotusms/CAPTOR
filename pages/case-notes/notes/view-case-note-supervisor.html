@@ -1,0 +1,752 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>View Case Note | CAPTOR</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="../../../Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../../Content/css/animate.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+    <link href="../../../Content/css/main.min.css" rel="stylesheet" />
+	
+	<!--[if lt IE 9]>
+	    <script src="../../../Content/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!--<script src="Content/plugins/jquery/jquery-1.9.1.min.js"></script>-->
+    <script src="../../../Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../../Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="../../../Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="../../../Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="../../../Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+   
+</head>
+<body class="navbar-default">
+    <div class="overlay"></div>
+
+	<div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+
+    <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer page-footer-fixed page-right-sidebar-fixed page-right-sidebar-toggled">
+        <div id="header" class="header navbar navbar-fixed-top navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="keyword">
+                        <form class="navbar-form form-input-flat">
+                            <div class="form-group search">
+                                <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                <span class="icon"></span>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle has-notify" data-click="toggle-notify">
+                            <span class="notifications-menu"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-notification pull-right">
+                            <li class="dropdown-header">Notifications (4)</li>
+                            <li class="notification-item general-notification">
+                                <a href="#">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Notification</h6>
+                                        <p class="desc">Server down on 1/24/2016.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item tasks-notification">
+                                <a href="javascript:;">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Task</h6>
+                                        <p class="desc">One or more OVAM tasks added.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item calendar-notification">
+                                <a href="calendar.html">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Events</h6>
+                                        <p class="desc">New event posted.</p>
+                                        <div class="time">34 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item subscription-notification">
+                                <a href="email_inbox.html">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Subscriptions</h6>
+                                        <p class="desc">You are now subscribed.</p>
+                                        <div class="time">2 hour ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="../enterprise/email_inbox.html">View more</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">John Smith</span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="my-profile"><a href="#"><span> My Profile</span></a></li>
+                            <li class="my-inbox"><a href="../../enterprise/email_inbox.html"><span> My Notifications</span></a></li>
+                            <li class="my-options"><a href="#"><span> My Options</span></a></li>
+                            <li class="my-settings"><a href="../../enterprise/settings.html"><span> My Settings</span></a></li>
+                            <li class="divider"></li>
+                            <li class="logout"><a href="../../../index.html"><span> Log Out</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="right-sidebar-toggle">
+                        <a href="javascript:;" data-click="right-sidebar-toggled">
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav">
+                    <li class="nav-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../../Content/img/captorlogo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="mini-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../../Content/img/mini-logo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="divider has-minify-btn">
+                        <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><span></span></a>
+                    </li>
+                    <li class="sidebar-menu-item search has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span>Search Menu</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <form class="navbar-form form-input-flat">
+                                    <div class="form-group search">
+                                        <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                        <span class="icon"></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">Navigation</li>
+                    <li class="sidebar-menu-item dashboard">
+                        <a href="../../enterprise/dashboard.html">
+                            <span class="icon"></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item search-offender">
+                        <a href="../../enterprise/individual-offender-case-notes-process.html">
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Individual Offender Search</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item bulk-offender has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Bulk Case Notes</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="sidebar-menu-item">
+                                <a href="../../case-notes/bulk-note.html">Bulk Note</a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a href="../../case-notes/bulk-contact.html">Bulk Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-bg"></div>
+
+        <div id="content" class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="case-note-page-header page-header col-xs-12">
+                        <span class="base-icon"></span>
+                        <span class="icon2"></span>
+                        <span class="icon3"></span>
+                        Note
+                    </h1>
+                </div>
+            </div>
+
+            <!--View Case Note-->
+            <div class="row page">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Note (Supervisor/Manager/Director)</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p><strong>Liam Black, Parole Supervisor</strong></p>
+                                                <p>Offender Re-Entry Quality Assurance</p>
+                                                <p>Eastern Institutional Region</p>
+                                                <p>SCI-Graterford</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Date Created</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymcedisabled" disabled>Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Supplements View-->
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Supplements List</h4>
+                                    <p class="help-block text-muted m-b-0">A maximum of two supplements only. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Comments</th>
+                                                        <th>Created By</th>
+                                                        <th>View</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>12/01/2014</td>
+                                                        <td>Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae...</td>
+                                                        <td>Sean White</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint" data-panel-link="page2"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <a href="case-list.html">
+                        <button type="submit" class="btn btn-secondary btn-icon btn-back btn-backpage pull-left">
+                            <span class="icon"></span>
+                            <span>Back to Case Notes</span>
+                        </button>
+                    </a>
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-edit btn-waypoint pull-right btn-go-forward" data-panel-link="page3">
+                        <span>Edit this Note </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--View Supplement-->
+            <div class="row page2">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Supplement</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p><strong>Liam Black, Parole Supervisor</strong></p>
+                                                <p>Offender Re-Entry Quality Assurance</p>
+                                                <p>Eastern Institutional Region</p>
+                                                <p>SCI-Graterford</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Date Created</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Supplement Comments</label>
+                                                <textarea type="textarea" class="form-control tinymcedisabled">Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Back</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-edit btn-waypoint btn-go-forward pull-right" data-panel-link="page4">
+                        <span>Edit this Supplement </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Edit Case Note-->
+            <div class="row page3">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>Edit Note</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p><strong>Liam Black, Parole Supervisor</strong></p>
+                                                <p>Offender Re-Entry Quality Assurance</p>
+                                                <p>Eastern Institutional Region</p>
+                                                <p>SCI-Graterford</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Date Created</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce" disabled>Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-icon btn-back btn-waypoint btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page">
+                        <span>Save Changes </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Edit Supplement-->
+            <div class="row page4">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>Edit Supplement</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p><strong>Liam Black, Parole Supervisor</strong></p>
+                                                <p>Offender Re-Entry Quality Assurance</p>
+                                                <p>Eastern Institutional Region</p>
+                                                <p>SCI-Graterford</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Date Created</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Supplement Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce">Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page2">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page2">
+                        <span>Save Changes </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <span class="pull-right">
+                    <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                        <i class="fa ion-chevron-up"></i> <span class="hidden-xs">Back to Top</span>
+                    </a>
+                </span>
+                &copy; 2016 <b>CAPTOR - Commonwealth of Pennsylvania</b> All Rights Reserved
+            </div>
+
+        </div>
+
+        <div id="sidebar-right" class="sidebar sidebar-right">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="col-xs-4 no-padding active"><a href="#offender" data-toggle="tab">Offender</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#today" data-toggle="tab">Today</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#notifications" data-toggle="tab">Notifications</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="offender">
+                        <ul class="nav">
+                            <li>
+                                <ul class="nav offender-details-list">
+                                    <li class="offender-img">
+                                        <div class="circle-container">
+                                            <img class="img-responsive" src="../../../Content/img/offender.png" alt="offender-img" />
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Offender details</li>
+                                    <li>
+                                        <label>Full Name </label>
+                                        <span>John Doe</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">DOB </label>
+                                        <span>11/04/1975</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">SID#</label>
+                                        <span>125896</span>
+                                    </li>
+                                    <li class="sidebar-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <b class="caret pull-right"></b>
+                                            <label class="control-label">DOC#</label>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>56899734</li>
+                                            <li>56892352</li>
+                                            <li>56823234</li>
+                                            <li>24653456</li>
+                                            <li>45445664</li>
+                                            <li>89787899</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">PBPP#</label>
+                                        <span>P12345</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">FBI#</label>
+                                        <span>458966</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Sex</label>
+                                        <span>Male</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Race</label>
+                                        <span>Hispanic</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Location</label>
+                                        <span>Harrisburg</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Temp. Location</label>
+                                        <span>Camp Hill</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="today">
+                        <ul class="nav">
+                            <li class="nav-date">
+                                Sunday, May 31 st
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Tasks</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa ion-settings"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Your scheduled post has been published</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Aenean lobortis libero libero, vitae imperdiet dolor dictum id.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-shield"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Turn on the firewall</a></div>
+                                            <div class="time"><span>Today, 7.08am</span></div>
+                                            <div class="desc"><span>Donec at augue in mi egestas luctus fermentum et ex.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa ion-person-add"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Added 2 admin user</a></div>
+                                            <div class="time"><span>Today, 6.40am</span></div>
+                                            <div class="desc"><span>Quisque elementum urna placerat mi vestibulum lacinia.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Projects</li>
+                            <li class="nav-project">
+                                <ul class="project-list">
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-success"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">iPhone Apps Development</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" style="width: 60%"></div>
+                                            </div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-danger"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Website Redesign</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
+                                            </div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="notifications">
+                        <ul class="nav">
+                            <li class="nav-header">Notifications</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">PHP version updated</a></div>
+                                            <div class="time"><span>Yesterday, 6.06pm</span></div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">10 Unknown mysql query detected</a></div>
+                                            <div class="time"><span>Yesterday, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from David</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Nunc metus orci, lobortis eu luctus quis, dictum mollis ante.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from Terry</a></div>
+                                            <div class="time"><span>Today, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Calendar</li>
+                            <li>
+                                <div id="schedule-calendar"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-bg sidebar-right"></div>
+
+    </div>
+
+    <script src="../../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-datetimepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../../../Content/plugins/noframework.waypoints.js"></script>
+    <script src="../../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../../Content/js/page-calendar.demo.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../../Content/plugins/tinymce/tinymce.min.js"></script>
+    <script src="../../../Content/js/apps-custom.js"></script>
+    <script src="../../../Content/js/apps-alert-notifications.js"></script>
+    <script src="../../../Content/js/apps-wysiwyg.js"></script>
+    <script src="../../../Content/js/apps-waypoint.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            App.init();
+            WYSIWYG.init();
+            AlertNotifications.init();
+            Waypoints.init();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,2582 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>View a Contact | CAPTOR</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	c
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="../../../Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../../Content/css/animate.min.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="../../../Content/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
+    <link href="../../../Content/css/main.min.css" rel="stylesheet" />
+	
+	<!--[if lt IE 9]>
+	    <script src="../../../Content/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!--<script src="../../../Content/plugins/jquery/jquery-1.9.1.min.js"></script>-->
+    <script src="../../../Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../../Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="../../../Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="../../../Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="../../../Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="navbar-default">
+    <div class="overlay"></div>
+
+    <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+
+    <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer page-footer-fixed page-right-sidebar-fixed page-right-sidebar-toggled">
+        <div id="header" class="header navbar navbar-fixed-top navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="keyword">
+                        <form class="navbar-form form-input-flat">
+                            <div class="form-group search">
+                                <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                <span class="icon"></span>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle has-notify" data-click="toggle-notify">
+                            <span class="notifications-menu"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-notification pull-right">
+                            <li class="dropdown-header">Notifications (4)</li>
+                            <li class="notification-item general-notification">
+                                <a href="#">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Notification</h6>
+                                        <p class="desc">Server down on 1/24/2016.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item tasks-notification">
+                                <a href="javascript:;">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Task</h6>
+                                        <p class="desc">One or more OVAM tasks added.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item calendar-notification">
+                                <a href="calendar.html">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Events</h6>
+                                        <p class="desc">New event posted.</p>
+                                        <div class="time">34 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item subscription-notification">
+                                <a href="email_inbox.html">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Subscriptions</h6>
+                                        <p class="desc">You are now subscribed.</p>
+                                        <div class="time">2 hour ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="../enterprise/email_inbox.html">View more</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">John Smith</span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="my-profile"><a href="#"><span> My Profile</span></a></li>
+                            <li class="my-inbox"><a href="../../enterprise/email_inbox.html"><span> My Notifications</span></a></li>
+                            <li class="my-options"><a href="#"><span> My Options</span></a></li>
+                            <li class="my-settings"><a href="../../enterprise/settings.html"><span> My Settings</span></a></li>
+                            <li class="divider"></li>
+                            <li class="logout"><a href="../../../index.html"><span> Log Out</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="right-sidebar-toggle">
+                        <a href="javascript:;" data-click="right-sidebar-toggled">
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav">
+                    <li class="nav-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../../Content/img/captorlogo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="mini-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../../Content/img/mini-logo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="divider has-minify-btn">
+                        <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><span></span></a>
+                    </li>
+                    <li class="sidebar-menu-item search has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span>Search Menu</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <form class="navbar-form form-input-flat">
+                                    <div class="form-group search">
+                                        <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                        <span class="icon"></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">Navigation</li>
+                    <li class="sidebar-menu-item dashboard">
+                        <a href="../../enterprise/dashboard.html">
+                            <span class="icon"></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item search-offender">
+                        <a href="../../enterprise/individual-offender-case-notes-process.html">
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Individual Offender Search</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item bulk-offender has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Bulk Case Notes</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="sidebar-menu-item">
+                                <a href="../../case-notes/bulk-note.html">Bulk Note</a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a href="../../case-notes/bulk-contact.html">Bulk Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-bg"></div>
+
+        <div id="content" class="content">
+
+            <!-- Page Header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="contact-page-header page-header col-xs-12">
+                        <span class="base-icon"></span>
+                        <span class="icon2"></span>
+                        <span class="icon3"></span>
+                        <span class="icon4"></span>
+                        Contact
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Main Waypoint -->
+            <div class="row page">
+                <!-- Contact Details -->
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <h4>View a Contact</h4>
+                                </div>
+                                <div class="col-xs-4 attempted text-right">
+                                    <label>Attempted Contact?:</label>
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contact Type</label>
+                                                <p>Collateral</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Contact Method</label>
+                                                <p>Field</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Start - End Date/Time</label>
+                                                <p>03/17/2016 11:57 am to 03/17/2016 11:57 am</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymcedisabled">Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Supplements View-->
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Supplements List</h4>
+                                    <p class="help-block text-muted m-b-0">A maximum of two supplements only. </p>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button type="submit" class="btn btn-default btn-icon btn-clipboard btn-waypoint btn-go-forward" data-panel-link="page6">
+                                        <span>Add a Supplement</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Comments</th>
+                                                        <th>Created By</th>
+                                                        <th>View</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>12/01/2014</td>
+                                                        <td>Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae...</td>
+                                                        <td>Sean White</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drug Tests Widget -->
+                <div class="col-xs-12 col-sm-6">
+                    <div class="widget widget-form">
+                        <div class="widget-header no-border">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Drug Test</h4>
+                                    <p class="help-block text-muted m-b-0">Description</p>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button type="submit" class="btn btn-default btn-icon btn-add btn-waypoint pull-right btn-go-forward" data-panel-link="page4">
+                                        <span>Add </span>
+                                        <span class="icon"></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-secondary btn-icon btn-view btn-waypoint pull-right btn-go-forward" data-panel-link="page5">
+                                        <span class="icon"></span>
+                                        <span>View </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaterals Widget -->
+                <div class="col-xs-12 col-sm-6">
+                    <div class="widget widget-form">
+                        <div class="widget-header no-border">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Collaterals</h4>
+                                    <p class="help-block text-muted m-b-0">Description</p>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button type="submit" class="btn btn-secondary btn-icon btn-view btn-waypoint pull-right btn-go-forward" data-panel-link="page3">
+                                        <span class="icon"></span>
+                                        <span>View </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <a href="../../case-notes/notes/case-list.html">
+                        <button type="submit" class="btn btn-secondary btn-icon btn-back pull-left">
+                            <span class="icon"></span>
+                            <span>Back to Case Notes</span>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+            
+            <!-- View a Collateral Waypoint -->
+            <div class="row page3">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Collateral(s)</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section class="view-collaterals">
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <h4>Staff Collaterals Added</h4>
+                                            <table class="table table-bordered table-responsive">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Assisting?</th>
+                                                        <th>Collateral?</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Tom Hanks</td>
+                                                        <td><i class="fa ion-checkmark-circled"></i></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Johnny Deps</td>
+                                                        <td></td>
+                                                        <td><i class="fa ion-checkmark-circled"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-4">
+                                            <h4>Offender Collaterals Added</h4>
+                                            <table class="table table-bordered table-responsive">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Type</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Bill Cosby</td>
+                                                        <td>Neighbor</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-4">
+                                            <h4>Other Collaterals Added</h4>
+                                            <table class="table table-bordered table-responsive">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Employer</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Parent</td>
+                                                        <td>Mother</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Back</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add a Drug Test Waypoint -->
+            <div class="row page4">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <h4>Add a Drug Test</h4>
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <ul class="nav nav-pills nav-pills-primary nav-pills-inline pull-right">
+                                        <li class="active"><a href="#instant" data-toggle="tab">Instant Test</a></li>
+                                        <li><a href="#lab" data-toggle="tab">Lab Test</a></li>
+                                        <li><a href="#breathalyzer" data-toggle="tab">Breathalyzer</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="tab-content panel drug-test-types">
+
+                                                <!-- Instant Test -->
+                                                <div class="tab-pane fade active in" id="instant">
+                                                    <h4>Instant Test</h4>
+                                                    <div class="col-xs-12 col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Results</label>
+                                                            <div class="inline-radios block drug-test">
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-1" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-1" class="radio-custom-label">Negative</label>
+                                                                </div>
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-2" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-2" class="radio-custom-label">Positive</label>
+                                                                </div>
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-3" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-3" class="radio-custom-label">Invalid</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="substances" class="col-xs-12 col-md-8">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Substances </label>
+                                                            <p class="help-block text-muted f-s-11 m-b-0">
+                                                                Select multiple substances as you type
+                                                            </p>
+                                                            <input type="text" name="jquery_autocomplete" id="jquery-autocomplete" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Lab Test -->
+                                                <div class="tab-pane fade" id="lab">
+                                                    <h4>Lab Test</h4>
+                                                    <div class="col-xs-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Specimen ID/Req #</label>
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Brethalizer Test -->
+                                                <div class="tab-pane fade" id="breathalyzer">
+                                                    <h4>Breathalyzer Test</h4>
+                                                    <div class="col-xs-12 col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Results</label>
+                                                            <div class="inline-radios block drug-test">
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-4" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-4" class="radio-custom-label">Negative</label>
+                                                                </div>
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-5" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-5" class="radio-custom-label">Positive</label>
+                                                                </div>
+                                                                <div class="radio-group radio-inline">
+                                                                    <input id="radio-6" class="radio-custom" name="radio-group" type="radio">
+                                                                    <label for="radio-6" class="radio-custom-label">Invalid</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="alcohol" class="col-xs-12 col-md-8">
+                                                        <div class="form-group">
+                                                            <label class="control-label">This breathalyzer resulted positive for <span class="text-warning">Alcohol</span> only.</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page">
+                                                <span>Add this Test </span>
+                                                <span class="icon"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <h4>Drug Tests Added</h4>
+                                    <p class="help-block text-muted f-s-11 m-b-0">
+                                        Remove, edit, or review the test recently added or submit if finished
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <table class="table table-bordered table-responsive">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Test Type</th>
+                                                        <th>Results</th>
+                                                        <th>Substances</th>
+                                                        <th>Lab Results</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Breathalyzer</td>
+                                                        <td>Positive</td>
+                                                        <td>Alcohol</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Instant</td>
+                                                        <td>Positive</td>
+                                                        <td>Cocaine</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lab</td>
+                                                        <td>Positive</td>
+                                                        <td>COC-Cocaine</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#labResults">View Lab Results</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Instant</td>
+                                                        <td>Negative</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page">
+                        <span>Submit these Tests </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- View a Drug Test Waypoint -->
+            <div class="row page5">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Drug Test(s)</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <table class="table table-bordered table-responsive">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Test Type</th>
+                                                        <th>Results</th>
+                                                        <th>Substances</th>
+                                                        <th>Lab Results</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Breathalyzer</td>
+                                                        <td>Positive</td>
+                                                        <td>Alcohol</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Instant</td>
+                                                        <td>Positive</td>
+                                                        <td>Cocaine</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lab</td>
+                                                        <td>Positive</td>
+                                                        <td>COC-Cocaine</td>
+                                                        <td><a href="" data-toggle="modal" data-target="#labResults">View Lab Results</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Instant</td>
+                                                        <td>Negative</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Back</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page4">
+                        <span>Add Drug Test </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add a Supplement Waypoint -->
+            <div class="row page6">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>Add a Supplement</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Supplement Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page">
+                        <span>Add to Contact </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- View a Supplement Waypoint -->
+            <div class="row page8">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View a Supplement</h4>
+                        </div>
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Supplement Comments</label>
+                                                <textarea type="textarea" class="form-control tinymcedisabled">Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page">
+                        <span class="icon"></span>
+                        <span>Back</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div id="footer" class="footer">
+                <span class="pull-right">
+                    <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                        <i class="fa ion-chevron-up"></i> <span class="hidden-xs">Back to Top</span>
+                    </a>
+                </span>
+                &copy; 2016 <b>CAPTOR - Commonwealth of Pennsylvania</b> All Rights Reserved
+            </div>
+        </div>
+
+        <div id="sidebar-right" class="sidebar sidebar-right">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="col-xs-4 no-padding active"><a href="#offender" data-toggle="tab">Offender</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#today" data-toggle="tab">Today</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#notifications" data-toggle="tab">Notifications</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="offender">
+                        <ul class="nav">
+                            <li>
+                                <ul class="nav offender-details-list">
+                                    <li class="offender-img">
+                                        <div class="circle-container">
+                                            <img class="img-responsive" src="../../../Content/img/offender.png" alt="offender-img" />
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Offender details</li>
+                                    <li>
+                                        <label>Full Name </label>
+                                        <span>John Doe</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">DOB </label>
+                                        <span>11/04/1975</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">SID#</label>
+                                        <span>125896</span>
+                                    </li>
+                                    <li class="sidebar-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <b class="caret pull-right"></b>
+                                            <label class="control-label">DOC#</label>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>56899734</li>
+                                            <li>56892352</li>
+                                            <li>56823234</li>
+                                            <li>24653456</li>
+                                            <li>45445664</li>
+                                            <li>89787899</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">PBPP#</label>
+                                        <span>P12345</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">FBI#</label>
+                                        <span>458966</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Sex</label>
+                                        <span>Male</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Race</label>
+                                        <span>Hispanic</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Location</label>
+                                        <span>Harrisburg</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Temp. Location</label>
+                                        <span>Camp Hill</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="today">
+                        <ul class="nav">
+                            <li class="nav-date">
+                                Sunday, May 31 st
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Tasks</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa ion-settings"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Your scheduled post has been published</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Aenean lobortis libero libero, vitae imperdiet dolor dictum id.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-shield"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Turn on the firewall</a></div>
+                                            <div class="time"><span>Today, 7.08am</span></div>
+                                            <div class="desc"><span>Donec at augue in mi egestas luctus fermentum et ex.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa ion-person-add"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Added 2 admin user</a></div>
+                                            <div class="time"><span>Today, 6.40am</span></div>
+                                            <div class="desc"><span>Quisque elementum urna placerat mi vestibulum lacinia.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Projects</li>
+                            <li class="nav-project">
+                                <ul class="project-list">
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-success"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">iPhone Apps Development</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" style="width: 60%"></div>
+                                            </div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-danger"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Website Redesign</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
+                                            </div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="notifications">
+                        <ul class="nav">
+                            <li class="nav-header">Notifications</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">PHP version updated</a></div>
+                                            <div class="time"><span>Yesterday, 6.06pm</span></div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">10 Unknown mysql query detected</a></div>
+                                            <div class="time"><span>Yesterday, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from David</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Nunc metus orci, lobortis eu luctus quis, dictum mollis ante.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from Terry</a></div>
+                                            <div class="time"><span>Today, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Calendar</li>
+                            <li>
+                                <div id="schedule-calendar"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-bg sidebar-right"></div>
+
+        <!-- Modals -->
+        <div class="modal modal-delete fade" id="cancelMdl" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+
+                        <h4 class="modal-title" id="myModalLabel">
+                            Ask Yourself This
+                        </h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="modal-icon text-center">
+                                    <i class="fa fa-3x fa-fw fa-bomb"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-9 text-center">
+                                <p>Do I want to delete this Case Note?</p>
+                                <p>Attention!: Any Supplements to this note will be lost.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <a href="case-list.html">
+                                    <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left">
+                                        <span class="icon"></span>
+                                        <span>Delete it</span>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                    <span>Not Yet</span>
+                                    <span class="icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal modal-lg fade" id="offenderResults" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Offender Search Results
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row tiles">
+                            <section class="clearfix">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>John Doe</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip">  flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-notes/profile.html" class="btn-footer">  Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Brian Stan</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-list/case-list.html" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Anderson Silva</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-list/case-list.html" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Jose Aldo</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-list/case-list.html" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Conor McGregor</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-list/case-list.html" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Dominic Cruz</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../../Content/img/offender.png" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>SID#</label> <span>639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>DOC#</label> <span>125639854</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>PBPP#</label> <span>P12345</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="../case-list/case-list.html" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#" class="prev disabled"><i class="fa fa-fw ion-chevron-left"></i></a></li>
+                                    <li><a href="#" class="active">1</a></li>
+                                    <li> <a href="#">2</a></li>
+                                    <li> <a href="#">3</a></li>
+                                    <li> <a href="#">4</a></li>
+                                    <li><a href="#" class="next"><i class="fa fa-fw ion-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-secondary btn-icon btn-cancel pull-left" data-dismiss="modal">
+                                    <span class="icon"></span>
+                                    <span>Close</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-lg fade" id="staffResults" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Staff Search Results
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row tiles">
+                            <section class="clearfix">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Manny Pacquiao Jr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/PBPP.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip">  flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer">  Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Floyd Mayweather Sr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/Corrections-keystone-rgb.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Floyd Mayweather Sr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/Corrections-keystone-rgb.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Manny Pacquiao Jr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/PBPP.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip">  flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer">  Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Manny Pacquiao Jr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/PBPP.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip">  flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer">  Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4">
+                                        <div class="result-tile">
+                                            <div class="flip">
+                                                <div class="tile front">
+                                                    <div class="tile-header">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Floyd Mayweather Sr.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-4">
+                                                                <img src="../../Content/img/Corrections-keystone-rgb.jpg" />
+                                                            </div>
+                                                            <div class="col-xs-6 pull-right">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Agency</label> <span>Parole Board</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Location</label> <span>Harrisburg</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Classification</label> <span>Field Agent</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="#" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flipback">
+                                                <div class="tile back">
+                                                    <div class="tile-header">
+                                                        <h4>Other Offender Details</h4>
+                                                    </div>
+                                                    <div class="tile-body">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="tile-info">
+                                                                    <div>
+                                                                        <label>Sex</label> <span>Male</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <label>Race</label> <span>Hispanic</span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="label-important">
+                                                                            <span><i class="fa fa-fw fa-ban"></i></span>
+                                                                            <span>Case Notes Restricted</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tile-footer">
+                                                        <div class="clearfix">
+                                                            <div class="col-xs-6">
+                                                                <a class="btn-footer btn-flip"> Flip </a>
+                                                            </div>
+
+                                                            <div class="col-xs-6">
+                                                                <a href="" class="btn-footer"> Select</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#" class="prev disabled"><i class="fa fa-fw ion-chevron-left"></i></a></li>
+                                    <li><a href="#" class="active">1</a></li>
+                                    <li> <a href="#">2</a></li>
+                                    <li> <a href="#">3</a></li>
+                                    <li> <a href="#">4</a></li>
+                                    <li><a href="#" class="next"><i class="fa fa-fw ion-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-secondary btn-icon btn-cancel pull-left" data-dismiss="modal">
+                                    <span class="icon"></span>
+                                    <span>Close</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-delete fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Ask Yourself This
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="modal-icon text-center">
+                                    <i class="fa fa-3x fa-fw fa-bomb"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-9 text-center">
+                                <p>Do I want to delete this Collateral?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left" data-dismiss="modal">
+                                    <span class="icon"></span>
+                                    <span>Delete it</span>
+                                </button>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                    <span>Not Yet</span>
+                                    <span class="icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-med fade" id="labResults" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            SFO Lab Results
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <section class="clearfix">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="result-tile">
+                                            <div class="row sfo-results">
+                                                <ul class="no-list">
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Required #: </label>
+                                                        <span class="col-xs-12 col-sm-8">5001969823</span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">ID Specimen #: </label>
+                                                        <span class="col-xs-12 col-sm-8">259CM</span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Name: </label>
+                                                        <span class="col-xs-12 col-sm-8">Sickler, Eric</span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Overall Results: </label>
+                                                        <span class="col-xs-12 col-sm-8 text-danger drug-pos">Positive <b class="icon"></b></span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Test Name: </label>
+                                                        <span class="col-xs-12 col-sm-8">COC</span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Substance Sub Class: </label>
+                                                        <span class="col-xs-12 col-sm-8">Benzoylecgonine</span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Test Results: </label>
+                                                        <span class="col-xs-12 col-sm-8 text-success drug-neg">Negative <b class="icon"></b></span>
+                                                    </li>
+                                                    <li>
+                                                        <label class="col-xs-12 col-sm-4">Comments: </label>
+                                                        <span class="col-xs-12 col-sm-8">The lab results indicates that the amount of tested substance is below 0.0000012 ppm</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-secondary btn-icon btn-cancel pull-left" data-dismiss="modal">
+                                    <span class="icon"></span>
+                                    <span>Close</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-delete fade" id="delDrugTest" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Ask Yourself This
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3">
+                                <div class="modal-icon text-center">
+                                    <i class="fa fa-3x fa-fw fa-bomb"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-9 text-center">
+                                <p>Do I want to delete this drug test?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left" data-dismiss="modal">
+                                    <span class="icon"></span>
+                                    <span>Delete it</span>
+                                </button>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                    <span>Not Yet</span>
+                                    <span class="icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    
+    <script src="../../../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="../../../Content/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
+    <script src="../../../Content/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+       
+    <script src="../../../Content/plugins/jquery.sticky.js"></script>
+    <script src="../../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../../Content/plugins/tinymce/tinymce.min.js"></script>
+    <script src="../../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../../Content/plugins/noframework.waypoints.js"></script>
+    <script src="../../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../../Content/js/apps-custom.js"></script>
+    <script src="../../../Content/js/apps-form-plugins.js"></script>
+    <script src="../../../Content/js/apps-alert-notifications.js"></script>
+    <script src="../../../Content/js/apps-wysiwyg.js"></script>
+    <script src="../../../Content/js/apps-waypoint.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            App.init();
+            FormPlugins.init();
+            WYSIWYG.init();
+            AlertNotifications.init();
+            Waypoints.init();
+           
+
+            //treat checkboxes as radio options
+            $('input.checkbox-custom.collateral-types').on('change', function () {
+                $('input.checkbox-custom.collateral-types').not(this).prop('checked', false);
+            });
+
+            //initially hide the option panels for each lookup
+            $('#assisting-staff').hide();
+            $('#collateral-staff').hide();
+            $('#collateral-type').hide();
+            $('.temp-collaterals').hide();
+            $('#other-desc').hide();
+            $('#deleteWell').hide();
+
+            //initially disable the main options to force the user to choose one.
+            $('#staff-lookup').addClass('disabled');
+            $('#offender-lookup').addClass('disabled');
+            $('#other-lookup').addClass('disabled');
+
+
+            //If staff is selected
+            $("#checkbox-1").click(function () {
+
+                if ($(this).is(":checked")) {
+                    $('#staff-lookup').removeClass('disabled');
+                    $('#assisting-staff').fadeIn();
+                    $('#collateral-staff').fadeIn();
+                    $('#collateral-type').fadeOut();
+                    $('#other-desc').fadeOut();
+                    $('#offender-lookup').addClass('disabled');
+                    $('#other-lookup').addClass('disabled');
+                } else {
+                    $('#collateral-type').fadeOut();
+                    $('#assisting-staff').fadeOut();
+                    $('#collateral-staff').fadeOut();
+                    $('#staff-lookup').addClass('disabled');
+                }
+            });
+
+            //If offender is selected
+            $("#checkbox-2").click(function () {
+
+                if ($(this).is(":checked")) {
+                    $('#collateral-type').fadeIn();
+                    $('#offender-lookup').removeClass('disabled');
+                    $('#staff-lookup').addClass('disabled');
+                    $('#other-lookup').addClass('disabled');
+                    $('#other-desc').fadeOut();
+                    $('#assisting-staff').fadeOut();
+                    $('#collateral-staff').fadeOut();
+                } else {
+                    $('#collateral-type').fadeOut();
+                    $('#offender-lookup').addClass('disabled');
+                }
+
+            });
+
+            //If offender is selected
+            $("#checkbox-3").click(function () {
+
+                if ($(this).is(":checked")) {
+                    $('#other-desc').fadeIn();
+                    $('#staff-lookup').addClass('disabled');
+                    $('#offender-lookup').addClass('disabled');
+                    $('#other-lookup').removeClass('disabled');
+                    $('#assisting-staff').fadeOut();
+                    $('#collateral-staff').fadeOut();
+                    $('#collateral-type').fadeOut();
+                } else {
+                    $('#other-lookup').addClass('disabled');
+                    $('#other-desc').fadeOut();
+                }
+
+            });
+
+
+            $('.ion-trash-b').click(function () {
+                $('#deleteWell').fadeIn();
+            })
+
+            $('#deleteWell').find('button').click(function () {
+                console.log('Hello');
+                $('#deleteWell').fadeOut();
+            })
+            
+        });
+
+        //if drug test is positive show sobstances
+
+            $('#substances').hide();
+            $('#alcohol').hide();
+
+            $("#radio-1, #radio-3").click(function () {
+                if ($(this).is(":checked")) {
+                    $('#substances').hide();
+                } 
+            });
+
+            $("#radio-2").click(function () {
+                if ($(this).is(":checked")) {
+                    $('#substances').show();
+                } else {
+                    $('#substances').hide();
+                }
+            });
+
+            $("#radio-4, #radio-6").click(function () {
+                if ($(this).is(":checked")) {
+                    $('#alcohol').hide();
+                }
+            });
+
+            $("#radio-5").click(function () {
+                if ($(this).is(":checked")) {
+                    $('#alcohol').show();
+                } else {
+                    $('#alcohol').hide();
+                }
+            });
+
+
+
+        //show modal for staff search results
+        $('#staff-lookup').keypress(function (e) {
+            if (e.which == 13) {
+                $('#staffResults').modal();
+            }
+        });
+
+        //show modal for offender search results
+        $('#offender-lookup').keypress(function (e) {
+            if (e.which == 13) {
+                $('#offenderResults').modal();
+            }
+        });
+
+        ////////////////////////  REMOVE THIS IN DEVELOPMENT COPY  //////////////////
+        //show collaterals added in temporary hold with the strike of a 'enter' key
+        $(document).keypress(function (e) {
+            if (e.which == 118) {
+                $('.temp-collaterals').show();
+            }
+        });
+
+
+
+
+        $(".front .btn-flip").click(function () {
+            $(this).parents(".result-tile").addClass("flipped");
+            $(this).parents(".result-tile").removeClass("unflipped");
+        });
+        $(".back .btn-flip").click(function () {
+            $(this).parents(".result-tile").removeClass("flipped");
+            $(this).parents(".result-tile").addClass("unflipped");
+        });
+
+
+        $(".norm").tooltip();
+        $('input:disabled, button:disabled').after(function (e) {
+            d = $("<div>");
+            i = $(this);
+            d.css({
+                height: i.outerHeight(),
+                width: i.outerWidth(),
+                position: "absolute",
+            })
+            d.css(i.offset());
+            d.attr("title", i.attr("title"));
+            d.tooltip();
+            return d;
+        });
+
+       
+
+    </script>
+</body>
+
+</html>
