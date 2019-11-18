@@ -1,0 +1,13 @@
+﻿    <script src="../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../../Content/plugins/noframework.waypoints.js"></script>
+    <script src="../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../Content/plugins/tinymce/tinymce.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../Content/js/apps-custom.js"></script>
+    <script src="../../Content/js/apps-alert-notifications.js"></script>
+    <script src="../../Content/js/apps-wysiwyg.js"></script>
+    <script src="../../Content/js/apps-waypoint.js"></script>

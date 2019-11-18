@@ -1,0 +1,148 @@
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//## Gray and brand colors for use across Bootstrap.
+$white:                 #fff;
+$white-txt:             #bbbbbb;
+$black:                 #000;
+$sidebar:               #101113;
+$sub-menu:              rgba(48, 55, 62, 0.28);
+
+$gray-darker:           lighten(#111, 8%);      // #252525
+$gray-dark:             #30373e;                // #30373e
+$gray:                  lighten($black, 33.5%);   // #555
+$gray-med:              lighten($black, 56%);     // #8f8f8f
+$gray-light:            lighten($black, 80%);     // #ccc
+$gray-lighter:          lighten($black, 93.5%);   // #eee
+
+$red:                   #db5565;
+$red-light:             #df6a78;
+$red-dark:              #c04b59;
+$delete:                #AB2B3B;
+
+$blue:                  #0768cc;
+$blue-light:            #29b6d8;
+$blue-dark:             #031D39;
+$top-blue:              #0768cc;                        //#0768cc
+$bot-blue:              #020d19;                        //#020d19
+
+$green:                 #a6a621;
+$green-light:           #66c796;
+$green-dark:            #47a877;
+
+$yellow:                #F8971D;
+$yellow-light:          rgba(248, 151, 29, 0.54);
+$yellow-med:            rgba(248, 151, 29, 0.77);
+$yellow-dark:           darken($yellow, 10%);
+
+$dark:                  #211E1E;
+$dark-light:            lighten($dark, 5%);
+$dark-dark:             darken($dark, 5%);
+
+$brand-primary:         $blue;
+$brand-success:         $green;
+$brand-info:            $blue-light;
+$brand-warning:         $yellow;
+$brand-danger:          $red;
+
+$transparent:           transparent;
+
+$mainColor:             $blue;
+
+/*Other colors form themes*/
+
+$clean-gray-med:        #666666;
+$clean-gray-dark:       #101113;
+$clean-gray-darker:     #3F4040;
+$clean-light:           #E8E8E8;
+
+$merica-blue:           #2C3E50;
+$merica-red:            #A02417;
+$merica-white:          #ECF0F1;
+$merica-blue-lt:        #3498DB;
+$merica-blue-med:       #2980B9;
+
+$white-blue:            #E1E6FA;
+$white-blue-med:        #6290bc;
+$white-blue-dark:       #ABC8E2;
+$ocean-blue:            #375D81;
+$navy-blue:             #183152;
+
+$white-green:           #F6FFE0;
+$white-green-med:       #E2F0D6;
+$white-green-dark:      #BDD684;
+$ocean-green:           #95AB63;
+$navy-green:            #10222B;
+
+$penn-blue:             #263248;
+$penn-blue-med:         #7E8AA2;
+$penn-yellow:           #FF9800;
+
+$magic-base:            #FF5156;
+$magic-dark:            #593634;
+
+$cell:                  #7E6D9C;
+$cell-gray:             #897F98;
+$cell-black:            #141414;
+
+$cell:                  #7E6D9C;
+$cell-gray:             #897F98;
+$cell-black:            #141414;
+
+$dutch-base:            #CDE855;
+$dutch-white:           #F5F6D4;
+$dutch-med:             #85DB18;
+$dutch-dark:            #191604;
+
+$presque-white:         #E6E2AF;
+$presque-base:          #046380;
+$presque-med:           #A7A37E;
+$presque-dark:          #002F2F;
+
+
+// FONTS
+
+$questrial:             'Questrial', sans-serif;
+$abc:                   'ABeeZee', sans-serif;
+$nunito:                'Nunito', sans-serif;
+$news:                  'News Cycle', sans-serif;
+$roboto:                'Roboto', sans-serif;
+$nobile:                'Nobile', sans-serif;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+$body-bg:               #f2f2f2;
+$text-color:            $gray-dark;
+
+$link-color:            $brand-primary;
+$link-hover-color:      darken($link-color, 15%);
+$navbar-bg:             #a6a621;
+$navbar-nav-color:      $text-color;
+
+$sidebar-bg:            $dark-light;
+$sidebar-width:         250px;
+$sidebar-collapse-width:70px;//collapsed width sidebar
+$sidebar-link-height:   50px;
+$navbar-height:         55px;
+
+$right-sidebar-bg:      $white;
+$right-sidebar-width:   0px;
+
+$nav-active-bg:         $dark;
+$nav-active-color:      #fff;
+$nav-icon-color:        #bbbbbb;
+$nav-hover-bg:          $dark-dark;
+$nav-hover-color:       #fff;
+$nav-sub-bg:            $nav-hover-bg;
+
+$border-color:          #e3e3e3;
+
+$content-padding:       20px;
+
+$rotator-img-width:     150px;
+
+$border-radius-base:    5px;

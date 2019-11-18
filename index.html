@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Login | CAPTOR</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="Content/css/animate.min.css" rel="stylesheet" />
+    <link href="Content/css/main.min.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+    
+    <!--[if lt IE 9]>
+        <script src="ContentContent/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="navbar-default">
+    <div class="overlay"></div>
+	<div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-container login-page">
+		<div class="login">
+		    
+            <div class="login-brand bg-inverse text-white">
+                <img src="Content/img/captorlogo.png" height="36" class="pull-right" alt="" /> Login Panel
+            </div>
+		    
+            <div class="login-content">
+                <h4 class="text-center m-t-0 m-b-20">Great to have you back!</h4>
+                <form action="#" method="POST" name="login_form" class="form-input-flat">
+                    <div class="form-group">
+                        <div class="input-group floating controls">
+                            <span class="input-group-addon left username"></span>
+                            <input type="text" class="float-label form-control input-lg">
+                            <label for="name">Username</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group floating controls">
+                            <span class="input-group-addon left password"></span>
+                            <input type="password" class="float-label form-control input-lg">
+                            <label for="name">Password</label>
+                        </div>
+                    </div>
+                    <div class="row m-b-20">
+                        <div class="col-xs-12 login-btn">
+                            <a href="/pages/enterprise/dashboard.html" class="btn btn-default btn-lg btn-round btn-block">Sign in to your account</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <small>Problems loging in? </small><a href="#" class="text-muted">Contact Support</a>
+                    </div>
+                </form>
+            </div>
+		</div>
+	</div>
+
+     	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+
+    <script src="Content/plugins/moment/moment.min.js"></script>
+    <script src="Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="Content/plugins/jquery.backstretch.js"></script>
+    <script src="Content/js/apps-custom.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<script>
+		$(document).ready(function() {
+		    App.init();
+		});
+
+		(function ($) {
+		    function floatLabel(inputType) {
+		        $(inputType).each(function () {
+		            var $this = $(this);
+		            // on focus add cladd active to label
+		            $this.focus(function () {
+		                $this.next().addClass("active");
+		            });
+		            //on blur check field and remove class if needed
+		            $this.blur(function () {
+		                if ($this.val() === '' || $this.val() === 'blank') {
+		                    $this.next().removeClass();
+		                }
+		            });
+		        });
+		    }
+		    // just add a class of "floatLabel to the input field!"
+		    floatLabel(".float-label");
+		})(jQuery);
+	</script>
+</body>
+</html>
