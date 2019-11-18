@@ -1,0 +1,2434 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>IMS | CAPTOR</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="../../Content/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../Content/css/animate.min.css" rel="stylesheet" />
+
+
+    <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+    <link href="../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../../Content/css/main.min.css" rel="stylesheet" />
+
+
+    <!--[if lt IE 9]>
+        <script src="../../Content/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <!--<script src="../../Content/plugins/jquery/jquery-1.9.1.min.js"></script>-->
+    <script src="../../Content/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../../Content/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="../../Content/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="../../Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="../../Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="navbar-default">
+    <div class="overlay"></div>
+
+    <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div>
+
+    <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer page-footer-fixed page-right-sidebar-fixed page-right-sidebar-toggled">
+        <div id="header" class="header navbar navbar-fixed-top navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="keyword">
+                        <form class="navbar-form form-input-flat">
+                            <div class="form-group search">
+                                <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                <span class="icon"></span>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle has-notify" data-click="toggle-notify">
+                            <span class="notifications-menu"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-notification pull-right">
+                            <li class="dropdown-header">Notifications (4)</li>
+                            <li class="notification-item general-notification">
+                                <a href="#">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Notification</h6>
+                                        <p class="desc">Server down on 1/24/2016.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>+
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item tasks-notification">
+                                <a href="javascript:;">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Task</h6>
+                                        <p class="desc">One or more OVAM tasks added.</p>
+                                        <div class="time">3 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item calendar-notification">
+                                <a href="calendar.html">
+                                    <div class="media"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Events</h6>
+                                        <p class="desc">New event posted.</p>
+                                        <div class="time">34 minutes ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="notification-item subscription-notification">
+                                <a href="email_inbox.html">
+                                    <div class="media bg-success"><span class="icon"></span></div>
+                                    <div class="message">
+                                        <h6 class="title">Subscriptions</h6>
+                                        <p class="desc">You are now subscribed.</p>
+                                        <div class="time">2 hour ago</div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="option option1" data-toggle="tooltip" data-title="Take me there" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-link"></i>
+                                        </div>
+                                        <div class="option option2" data-toggle="tooltip" data-title="Mark as Read" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-eye"></i>
+                                        </div>
+                                        <div class="option option3" data-toggle="tooltip" data-title="Delete me" data-placement="top">
+                                            <i class="fa fa-fw fa-lg ion-trash-b"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer text-center">
+                                <a href="../enterprise/email_inbox.html">View more</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">John Smith</span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="my-profile"><a href="#"><span> My Profile</span></a></li>
+                            <li class="my-inbox"><a href="../enterprise/email_inbox.html"><span> My Notifications</span></a></li>
+                            <li class="my-options"><a href="#"><span> My Options</span></a></li>
+                            <li class="my-settings"><a href="../enterprise/settings.html"><span> My Settings</span></a></li>
+                            <li class="divider"></li>
+                            <li class="logout"><a href="../../index.html"><span> Log Out</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="right-sidebar-toggle">
+                        <a href="javascript:;" data-click="right-sidebar-toggled">
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav">
+                    <li class="nav-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../Content/img/captorlogo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="mini-logo">
+                        <a href="dashboard.html" class="logo"><img src="../../Content/img/mini-logo.png" class="logo" alt="" /> </a>
+                    </li>
+                    <li class="divider has-minify-btn">
+                        <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><span></span></a>
+                    </li>
+                    <li class="sidebar-menu-item search has-sub">
+                        <a href="javascript:;">
+                            <b class="caret pull-right"></b>
+                            <span class="icon"></span>
+                            <span>Search Menu</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <form class="navbar-form form-input-flat">
+                                    <div class="form-group search">
+                                        <input type="text" class="form-control" placeholder="Enter keyword..." />
+                                        <span class="icon"></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">Navigation</li>
+                    <li class="sidebar-menu-item dashboard">
+                        <a href="../enterprise/dashboard.html">
+                            <span class="icon"></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item search-offender">
+                        <a href="../enterprise/individual-offender-case-notes-process.html">
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Individual Offender Search</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item bulk-offender">
+                        <a href="../enterprise/bulk-offender-search.html">
+                            <span class="icon"></span>
+                            <span class="icon2"></span>
+                            <span>Bulk Offender Search</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-bg"></div>
+
+        <div id="content" class="content">
+            <!-- Page Header -->
+            <div class="row">
+                <div class="col-xs-8 col-md-8">
+                    <h1 class="case-note-list-page-header page-header col-xs-12"><span>STG Affiliation</span></h1>
+                </div>
+                <div class="col-xs-4  col-md-4">
+                    <span class="pull-right span-timeline">
+                        <a href="#" class="">
+                            <i class="fa ion-ios-time-outline"></i>
+                            <span class="">Timeline View</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <!--Landing Page for Mock up-->
+            <div class="row page">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>No Current STG Affiliation on Record for this Offender</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+
+
+                                <button id="" type="submit" class="btn btn-default btn-create btn-icon pull-right btn-waypoint btn-go-forward" data-panel-link="page14">
+                                    <span>Create New Affiliation</span>
+                                    <span class="icon"></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 pagination-centered stg-viewuser pagination-padding-centered">
+
+                        <span class="pagination-padding btn-group">
+                            <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-left"></i></a>
+                            <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-right"></i></a>
+                        </span>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <!---->
+
+            <!--STG Affiliation Landing Page Starts-->
+
+            <div class="row page15">
+                <div class="col-xs-12 col-md-6">
+
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <div class="row widget-header-align">
+                                <div class="col-xs-8">
+                                    <h4>Affiliation Details</h4>
+                                </div>
+                                <div class="col-xs-4 attempted text-right">
+                                    <label>Current: </label>
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat" name="demo-form">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <!--<h4>Affiliation Details</h4>-->
+                                            <div class="affiliation-list">
+                                                <ul class="col-xs-6 no-list">
+                                                    <li><label>STG:  </label> <span>STI</span></li>
+                                                    <li><label>Rank:  </label> <span>Lieutenant</span></li>
+                                                    <li><label>Created By:  </label> <span>Sean White</span></li>
+
+                                                    <!--Affiliation Ended By Enabled when User clicks End Affilation-->
+                                                    <!--
+                                                    <li><label>Affiliation Ended By:  </label> <span>Sean White</span></li>
+                                                    -->
+                                                    <!--Validated By Enabled when User clicks Validate Affilation-->
+                                                    <!--
+                                                    <li><label>Validated By:  </label> <span>Sean White</span></li>
+                                                    -->
+                                                    <!--Decertified By Enabled when User clicks Decertify Affilation-->
+                                                    <!--
+                                                    <li><label>Decertified By:  </label> <span>Sean White</span></li>
+                                                    -->
+
+
+
+                                                </ul>
+                                                <ul class="col-xs-6 no-list">
+
+                                                    <li><label>Subset:  </label> <span>UNOI/KAM</span></li>
+                                                    <li><label>Status:  </label> <span class="status-dynamic-color">Suspected</span></li>
+                                                    <li><label>Created On:  </label> <span>9/14/2010</span></li>
+                                                    <!--Affiliation End Date Enabled when User clicks End Affilation-->
+                                                    <!--
+                                                    <li><label>Affiliation End Date:  </label> <span>9/14/2010</span></li>
+                                                    -->
+                                                    <!--Validated On Enabled when User clicks Validate Affilation-->
+                                                    <!--
+                                                    <li><label>Validated On:  </label> <span>9/14/2010</span></li>
+                                                    -->
+                                                    <!--Decertified On Enabled when User clicks Decertify Affilation-->
+                                                    <!--
+                                                    <li><label>Decertified On:  </label> <span>9/14/2010</span></li>
+                                                    -->
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button id="" type="submit" class="btn btn-default btn-waypoint btn-icon btn-edit btn-go-forward pull-right" data-panel-link="page2">
+                                                <span>Edit</span>
+                                                <span class="icon"></span>
+                                            </button>
+                                            <button id="" type="submit" class="btn btn-default  btn-icon btn-update  pull-right" data-target="#recent-updates" data-toggle="modal">
+                                                <span>Recent Updates</span>
+                                                <span class="icon"></span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--Methods of Verification Starts-->
+                <div class="col-xs-12 col-md-6">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Methods of Verification</h4>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button type="submit" class="btn btn-default btn-icon btn-clipboard btn-waypoint btn-go-forward" data-panel-link="page3">
+                                        <span>Add a New Method</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width="5%"></colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Created By</th>
+                                                        <th>Created On</th>
+                                                        <th>Verification Type</th>
+
+                                                        <th class="text-center">View</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Self admission by the inmate</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Gang Related Tattoos</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Use/Possession of Symbols or Logos</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Possession of Documents</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Possession of Publications</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Participation In Publications</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Court Documents</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Group Photo</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Observed Association</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Contact with Known Associates</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Inmate Information</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Membership Documents</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Law Enforcement Intelligence</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Published News Accounts</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Methods of Verification Ends-->
+
+                <div class="col-xs-12 stg-validate stg-admin pagination-centered">
+                    <button id="" type="submit" class="btn btn-danger  btn-delete btn-icon pull-left" data-target="#delaffiliation" data-toggle="modal">
+                        <span class="icon"></span>
+                        <span>Delete Affiliation</span>
+                    </button>
+
+
+                    <span class="pagination-padding btn-group">
+                        <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-left"></i></a>
+                        <button class="btn btn-secondary btn-sm btn-round no-icon btn-waypoint btn-go-forward" data-panel-link="page16">
+                        <i class="fa fa-chevron-right " ></i></button>
+                    </span>
+
+
+                    <!--Submit for Validation Button enabled only when method of Verification reaches three-->
+
+                    <button id="" type="submit" class="btn btn-default btn-save btn-icon pull-right">
+                        <span>Submit For Validation</span>
+                        <span class="icon"></span>
+
+                    </button>
+
+                    <!--End Affiliation Button enabled only for suspected-->
+
+                    <button id="" type="submit" class="btn btn-default btn-end btn-icon  btn-waypoint btn-go-forward pull-right" data-panel-link="page4">
+                        <span>End Affiliation</span>
+                        <span class="icon"></span>
+
+                    </button>
+
+
+
+                    <!-- Validate Affiliation Button enabled only when status changed to pending-->
+                    <!--
+                    <button id="" type="submit" class="btn btn-default btn-waypoint btn-icon btn-validate btn-go-forward pull-right" data-panel-link="page5" >
+                          <span>Validate Affiliation</span>
+                          <span class="icon"></span>
+                      </button>
+                      -->
+                    <!-- Decertify Button enabled only when status changed to Validated-->
+                    <!--
+                     <button id="" type="submit" class="btn btn-default btn-waypoint btn-icon btn-decertify btn-go-forward pull-right" data-panel-link="page6">
+                         <span>Decertify Affiliation</span>
+                         <span class="icon"></span>
+                     </button>
+                    -->
+                </div>
+
+            </div>
+
+            <!--STG Affiliation Landing Page Ends-->
+
+
+            <!-- Waypoints Starts -->
+            <!--Edit the STG Affiliation Starts-->
+
+            <div class="row page2">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>Edit STG Affiliation</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">STG</label>
+                                            <input type="text" value="STI" class="form-control" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Subset</label>
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Select One</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="UNOI/KAM"><a href="#">UNOI/KAM</a></li>
+                                                    <li><a href="#">Aryan Nations</a></li>
+                                                    <li><a href="#">National Socialist Movement</a></li>
+                                                    <li><a href="#">Keystone United</a></li>
+                                                    <li><a href="#">KKK</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Rank</label>
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Select One</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="Lieutenant"><a href="#">Lieutenant</a></li>
+                                                    <li><a href="#">Captain</a></li>
+                                                    <li><a href="#">Colonel</a></li>
+                                                    <li><a href="#">Major</a></li>
+                                                    <li><a href="#">General</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Status</label>
+
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Suspected</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="Suspected"><a href="#">Suspected</a></li>
+                                                    <li><a href="#">Pending</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Created By</label>
+                                            <input type="text" value="Sean White" class="form-control" disabled="disabled">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Created On</label>
+
+                                            <input type="text" value="9/14/2010" class="form-control" disabled="disabled">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 page-buttons">
+
+                        <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                            <span class="icon"></span>
+                            <span>Cancel</span>
+                        </button>
+
+
+                        <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page15">
+                            <span>Save Changes </span>
+                            <span class="icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Edit the STG Affiliation Ends-->
+            <!--Create a New Method Of Verification Starts-->
+
+            <div class="row page3">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>Add A Method of Verification</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Type</label>
+                                                <div id="" class="custom-dropdown form-control">
+                                                    <span>Select One</span>
+                                                    <ul id="method_values" class="dropdown">
+                                                        <li id="1"><a href="#">Self admission by the inmate</a></li>
+                                                        <li id="2"><a href="#">Gang Related Tattoos</a></li>
+                                                        <li id="3"><a href="#">Use/Possession of Symbols or Logos</a></li>
+                                                        <li id="4"><a href="#">Possession of Documents</a></li>
+                                                        <li id="5"><a href="#">Possession of Publications</a></li>
+                                                        <li id="6"><a href="#">Participation in Publications</a></li>
+                                                        <li id="7"><a href="#">Court Documents</a></li>
+                                                        <li id="8"><a href="#">Group Photo</a></li>
+                                                        <li id="9"><a href="#">Observed Association</a></li>
+                                                        <li id="10"><a href="#">Contact with Known Associates</a></li>
+                                                        <li id="11"><a href="#">Inmate Information</a></li>
+                                                        <li id="12"><a href="#">Membership Documents</a></li>
+                                                        <li id="13"><a href="#">Law Enforcement Intelligence</a></li>
+                                                        <li id="14"><a href="#">Published News Accounts</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span class="method_details"></span>
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page7">
+                        <span>Add to Methods </span>
+                        <span class="icon"></span>
+                    </button>
+
+
+
+                </div>
+            </div>
+
+            <!--Create a New Method Of Verification Ends-->
+            <!--Add More Method Of Verification Starts-->
+
+            <div class="row page7">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Method Of Verification List</h4>
+
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button id="" type="submit" class="btn btn-default btn-icon btn-clipboard btn-waypoint btn-go-forward pull-right" data-panel-link="page11">
+                                        <span>Add More Method </span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width="5%"></colgroup>
+                                                <colgroup width="5%"></colgroup>
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Created By</th>
+                                                        <th>Created On</th>
+                                                        <th>Method of Verification</th>
+                                                        <th class="text-center">Edit</th>
+                                                        <th class="text-center">Delete</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>13/01/2014</td>
+
+                                                        <td>Gang Related Tattoos</td>
+                                                        <td class="text-center"><i class="fa ion-edit btn-waypoint btn-go-forward" data-panel-link="page9"></i></td>
+                                                        <td class="text-center"><i class="fa ion-trash-b text-danger" data-toggle="modal" data-target="#del_placeholder_method"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+
+                                                        <td>Self Admission by the Inmate</td>
+                                                        <td class="text-center"><i class="fa ion-edit btn-waypoint btn-go-forward" data-panel-link="page9"></i></td>
+                                                        <td class="text-center"><i class="fa ion-trash-b text-danger" data-toggle="modal" data-target="#del_placeholder_method"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+                    <button id="" type="submit" class="btn btn-default btn-waypoint btn-icon btn-save btn-go-forward pull-right" data-panel-link="page15">
+                        <span>Save Methods</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Add More Method Of Verification Ends-->
+            <!--Additional Method of Verification Starts-->
+            <div class="row page11">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>Add A Method of Verification</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Type</label>
+                                                <div id="" class="custom-dropdown form-control">
+                                                    <span>Select One</span>
+                                                    <ul id="method_values" class="dropdown">
+                                                        <li id="1"><a href="#">Self admission by the inmate</a></li>
+                                                        <li id="2"><a href="#">Gang Related Tattoos</a></li>
+                                                        <li id="3"><a href="#">Use/Possession of Symbols or Logos</a></li>
+                                                        <li id="4"><a href="#">Possession of Documents</a></li>
+                                                        <li id="5"><a href="#">Possession of Publications</a></li>
+                                                        <li id="6"><a href="#">Participation in Publications</a></li>
+                                                        <li id="7"><a href="#">Court Documents</a></li>
+                                                        <li id="8"><a href="#">Group Photo</a></li>
+                                                        <li id="9"><a href="#">Observed Association</a></li>
+                                                        <li id="10"><a href="#">Contact with Known Associates</a></li>
+                                                        <li id="11"><a href="#">Inmate Information</a></li>
+                                                        <li id="12"><a href="#">Membership Documents</a></li>
+                                                        <li id="13"><a href="#">Law Enforcement Intelligence</a></li>
+                                                        <li id="14"><a href="#">Published News Accounts</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span class="method_details"></span>
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page7">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page7">
+                        <span>Add to Methods </span>
+                        <span class="icon"></span>
+                    </button>
+
+
+
+                </div>
+            </div>
+
+            <!--Additional Method of Verification Ends-->
+            <!--View Method Of Verification Starts-->
+
+            <div class="row page8">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Method Of Verification</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Verification Type</label>
+                                                <p>Self admission by the inmate</p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p>Sean White</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Created On</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Recent Comments</h4>
+
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <button id="" type="submit" class="btn btn-default btn-icon btn-add btn-waypoint btn-go-forward pull-right" data-panel-link="page13">
+                                        <span>Add Comment</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                          
+                                                <colgroup width="5%"></colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Created By</th>
+                                                        <th>Created On</th>
+                                                        <th>Comments</th>
+                                                        <th class="text-center">View</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>13/01/2014</td>
+                                                        <td>Awesome, our officer found his friend, now he is in our offender list</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page10"></i></td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>This Guy Shot the victim with this friend. And his friend is absconding</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page10"></i></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Back to STG Affiliation</span>
+                    </button>
+                    <button id="" type="submit" class="btn btn-danger btn-delete btn-icon pull-left" data-target="#delmethod" data-toggle="modal">
+                        <span class="icon"></span>
+                        <span>Delete Method</span>
+                    </button>
+                  
+                </div>
+
+            </div>
+
+            <!--View Method Of Verification Ends-->
+            <!--Placeholder Method Of Verification Starts-->
+
+            <div class="row page9">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>Edit Method</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Type</label>
+                                                <div id="" class="custom-dropdown form-control">
+                                                    <span>Select One</span>
+                                                    <ul id="method_values" class="dropdown">
+                                                        <li id="1"><a href="#">Self admission by the inmate</a></li>
+                                                        <li id="2"><a href="#">Gang Related Tattoos</a></li>
+                                                        <li id="3"><a href="#">Use/Possession of Symbols or Logos</a></li>
+                                                        <li id="4"><a href="#">Possession of Documents</a></li>
+                                                        <li id="5"><a href="#">Possession of Publications</a></li>
+                                                        <li id="6"><a href="#">Participation in Publications</a></li>
+                                                        <li id="7"><a href="#">Court Documents</a></li>
+                                                        <li id="8"><a href="#">Group Photo</a></li>
+                                                        <li id="9"><a href="#">Observed Association</a></li>
+                                                        <li id="10"><a href="#">Contact with Known Associates</a></li>
+                                                        <li id="11"><a href="#">Inmate Information</a></li>
+                                                        <li id="12"><a href="#">Membership Documents</a></li>
+                                                        <li id="13"><a href="#">Law Enforcement Intelligence</a></li>
+                                                        <li id="14"><a href="#">Published News Accounts</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <span class="method_details"></span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page7">
+                        <span class="icon"></span>
+                        <span>Back to Method</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page7">
+                        <span>Save Edits</span>
+                        <span class="icon"></span>
+                    </button>
+
+
+
+                </div>
+            </div>
+
+            <!--Placeholder Method Of Verification Ends-->
+            <!--View Comments Starts-->
+
+            <div class="row page10">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>View Comment</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p>Sean White</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Created On</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Modified By</label>
+                                                <p>Sean White</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Modified On</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymcedisabled">Lorem ipsum dolor sit amet, egestas a aliquam odio vivamus magna, vitae urna turpis habitasse nibh et ac, sem lorem ante primis placerat amet, feugiat velit etiam aliquam lacus volutpat placerat, purus id augue diam cursus. Quis massa eleifend quam sit velit, donec neque, quam libero luctus parturient. Blandit sed pharetra adipiscing bibendum. Pellentesque leo vivamus natoque integer, sed quis integer neque libero ultrices pharetra, feugiat nisl. Vestibulum ac ligula. Mollis a velit neque ultricies, nascetur arcu cursus dolor vel pellentesque urna.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page8">
+                        <span class="icon"></span>
+                        <span>Back to Method</span>
+                    </button>
+                    <button id="" type="submit" class="btn btn-danger btn-delete btn-icon pull-left" data-target="#delcomment" data-toggle="modal">
+                        <span class="icon"></span>
+                        <span>Delete this Comment</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-edit btn-waypoint pull-right btn-go-forward" data-panel-link="page12">
+                        <span>Edit this Comment</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--View Comments Ends-->
+            <!--Edit Indvidual Comments Starts-->
+
+            <div class="row page12">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Edit Comment</h4>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row org-chart-info">
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Created By</label>
+                                                <p>Sean White</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Created On</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="">
+                                                <label class="control-label">Modified By</label>
+                                                <p>Sean White</p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Modified On</label>
+                                                <p><i class="fa ion-calendar"></i> 02/12/2016</p>
+                                                <p><i class="fa ion-android-time"></i> 2100 <span>hrs</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page10">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page8">
+                        <span>Save Edits </span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Edit Individual Comments Ends-->
+            <!-- Add A New Comments Starts-->
+
+            <div class="row page13">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Add A New Comment</h4>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page8">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page8">
+                        <span>save</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Add A New Comments Ends-->
+            <!--Creating New Affiliation Fields Starts-->
+
+            <div class="row page14">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <h4>Create A New STG Affiliation</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">STG</label>
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Select One</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="STI"><a href="#">STI</a></li>
+                                                    <li><a href="#">White Supremacist</a></li>
+                                                    <li><a href="#">Latin King</a></li>
+                                                    <li><a href="#">Bloods</a></li>
+                                                    <li><a href="#">Crips</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Subset</label>
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Select One</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="UNOI/KAM"><a href="#">UNOI/KAM</a></li>
+                                                    <li><a href="#">Aryan Nations</a></li>
+                                                    <li><a href="#">National Socialist Movement</a></li>
+                                                    <li><a href="#">Keystone United</a></li>
+                                                    <li><a href="#">KKK</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Rank</label>
+                                            <div id="dd" class="custom-dropdown form-control">
+                                                <span>Select One</span>
+                                                <ul class="dropdown">
+                                                    <li data-id="Lieutenant"><a href="#">Lieutenant</a></li>
+                                                    <li><a href="#">Captain</a></li>
+                                                    <li><a href="#">Colonel</a></li>
+                                                    <li><a href="#">Major</a></li>
+                                                    <li><a href="#">General</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 page-buttons">
+
+                        <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                            <span class="icon"></span>
+                            <span>Cancel</span>
+                        </button>
+
+
+                        <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page15">
+                            <span>Save</span>
+                            <span class="icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Creating New Affiliation Fields Ends-->
+
+            <!--Historical Tile Replication Starts-->
+
+            <div class="row page16">
+               
+                <div class="col-xs-12 col-md-6">
+
+                    <div class="widget widget-form">
+                        <div class="widget-header">
+                            <div class="row widget-header-align">
+                                <div class="col-xs-8">
+                                    <h4>Affiliation Details</h4>
+                                </div>
+                                <div class="col-xs-4 attempted text-right">
+                                    <label>Current: </label>
+                                    <span>No</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat" name="demo-form">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <!--<h4>Affiliation Details</h4>-->
+                                            <div class="affiliation-list">
+                                                <ul class="col-xs-6 no-list">
+                                                    <li><label>STG:  </label> <span>STI</span></li>
+                                                    <li><label>Rank:  </label> <span>Lieutenant</span></li>
+                                                    <li><label>Created By:  </label> <span>Sean White</span></li>
+
+                                                    <!--Affiliation Ended By Enabled when User clicks End Affilation-->
+                                                   
+                                        <li><label>Affiliation Ended By:  </label> <span>Black Mama</span></li>
+                                       
+                                                    <!--Validated By Enabled when User clicks Validate Affilation-->
+                                                    <!--
+                                        <li><label>Validated By:  </label> <span>Sean White</span></li>
+                                        -->
+                                                    <!--Decertified By Enabled when User clicks Decertify Affilation-->
+                                                    <!--
+                                        <li><label>Decertified By:  </label> <span>Sean White</span></li>
+                                        -->
+
+
+
+                                                </ul>
+                                                <ul class="col-xs-6 no-list">
+
+                                                    <li><label>Subset:  </label> <span>UNOI/KAM</span></li>
+                                                    <li><label>Status:  </label> <span class="status-dynamic-color">Suspected</span></li>
+                                                    <li><label>Created On:  </label> <span>9/14/2010</span></li>
+                                                    <!--Affiliation End Date Enabled when User clicks End Affilation-->
+                                                
+                                        <li><label>Affiliation End Date:  </label> <span>3/14/2011</span></li>
+                              
+                                                    <!--Validated On Enabled when User clicks Validate Affilation-->
+                                                    <!--
+                                        <li><label>Validated On:  </label> <span>9/14/2010</span></li>
+                                        -->
+                                                    <!--Decertified On Enabled when User clicks Decertify Affilation-->
+                                                    <!--
+                                        <li><label>Decertified On:  </label> <span>9/14/2010</span></li>
+                                        -->
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            
+                                            <button id="" type="submit" class="btn btn-default  btn-icon btn-update  pull-right" data-target="#recent-updates" data-toggle="modal">
+                                                <span>Past Updates</span>
+                                                <span class="icon"></span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4>Methods of Verification</h4>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table table-bordered table-condensed table-hover table-striped">
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width=""></colgroup>
+                                                <colgroup width="5%"></colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Created By</th>
+                                                        <th>Created On</th>
+                                                        <th>Verification Type</th>
+
+                                                        <th class="text-center">View</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Self admission by the inmate</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Gang Related Tattoos</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sean White</td>
+                                                        <td>12/01/2014</td>
+                                                        <td>Use/Possession of Symbols or Logos</td>
+                                                        <td class="text-center"><i class="fa ion-eye btn-waypoint btn-go-forward" data-panel-link="page8"></i></td>
+                                                    </tr>
+                                                  
+
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-xs-12 text-center stg-validate pagination-centered">
+
+
+
+                    <span class="pagination-padding btn-group">
+                        <button class="btn btn-secondary btn-sm btn-round no-icon btn-waypoint btn-go-forward" data-panel-link="page15">
+                            <i class="fa fa-chevron-left "></i>
+                        </button>
+                        <a href="#" class="btn btn-secondary btn-sm btn-round no-icon"><i class="fa fa-chevron-right"></i></a>
+                    </span>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <!--Historical Tile Replication Ends-->
+
+            <!--End Affiliation Starts-->
+
+            <div class="row page4">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>End This Affilation</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page16">
+                        <span>Save</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--End Affiliation Ends-->
+            <!--Validate Affiliation Starts-->
+
+            <div class="row page5">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>Validate This Affilation</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Validated On</label>
+                                                <div class="input-group date controls" data-date-format="dd-mm-yyyy">
+                                                    <span class="input-group-addon left date-field"></span>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page15">
+                        <span>Save</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Validate Affiliation Ends-->
+            <!--Decertify Affiliation Starts-->
+
+            <div class="row page6">
+                <div class="col-xs-12">
+                    <div class="widget widget-form">
+
+                        <div class="widget-header">
+                            <h4>Decertify This Affilation</h4>
+                        </div>
+
+                        <div class="widget-body clearfix">
+                            <div class="form-input-flat">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Decertified On</label>
+                                                <div class="input-group date controls" data-date-format="dd-mm-yyyy">
+                                                    <span class="input-group-addon left date-field"></span>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Comments</label>
+                                                <textarea type="textarea" class="form-control tinymce"></textarea>
+                                                <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 page-buttons">
+                    <button type="submit" class="btn btn-secondary btn-waypoint btn-icon btn-back btn-go-back pull-left" data-panel-link="page15">
+                        <span class="icon"></span>
+                        <span>Cancel</span>
+                    </button>
+
+                    <button id="" type="submit" class="btn btn-default btn-icon btn-save btn-waypoint btn-go-forward pull-right" data-panel-link="page15">
+                        <span>Save</span>
+                        <span class="icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!--Decertify Affiliation Ends-->
+            <!-- Waypoints Ends -->
+            <!-- Modals-->
+            <!-- Delete Affiliation-->
+
+            <div class="modal modal-delete fade" id="delaffiliation" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+
+                            <h4 class="modal-title" id="myModalLabel">
+                                Ask Yourself This
+                            </h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+
+
+                                <div class="col-sm-12 col-md-12 ">
+                                    <div class="form-group">
+                                        <p class="control-label">Do I want to delete this STG Affiliation? </p>
+                                        <p class="control-label">Attention !: Any Associated Methods of Verification for this Offender will also be deleted. </p>
+                                        <br />
+                                        <label class="control-label">Comments</label>
+                                        <textarea type="textarea" class="form-control tinymce"></textarea>
+                                        <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                   
+                                        <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left btn-waypoint btn-go-forward" data-panel-link="page15"  data-dismiss="modal">
+                                            <span class="icon"></span>
+                                            <span>Delete it</span>
+                                        </button>
+                                 
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                        <span>Not Yet</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Delete Individual Comments-->
+
+            <div class="modal modal-delete fade" id="delcomment" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+
+                            <h4 class="modal-title" id="myModalLabel">
+                                Ask Yourself This
+                            </h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="modal-icon text-center">
+                                        <i class="fa fa-3x fa-fw fa-bomb"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-9 text-center">
+                                    <p>Do I want to delete this comment?</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+
+                                    <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left btn-waypoint btn-go-forward" data-panel-link="page8" data-dismiss="modal">
+                                        <span class="icon"></span>
+                                        <span>Delete it</span>
+                                    </button>
+
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                        <span>Not Yet</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Delete Placeholder Comments-->
+
+            <div class="modal modal-delete fade" id="del_placeholder_method" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+
+                            <h4 class="modal-title" id="myModalLabel">
+                                Ask Yourself This
+                            </h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <div class="modal-icon text-center">
+                                        <i class="fa fa-3x fa-fw fa-bomb"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-9 text-center">
+                                    <p>Do I want to delete this Method of Verification?</p>
+                                    <p>Attention! : Any Comments added to this Method of Verification will be lost.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+
+                                    <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left" data-dismiss="modal">
+                                        <span class="icon"></span>
+                                        <span>Delete it</span>
+                                    </button>
+
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                        <span>Not Yet</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Delete Individual Methods-->
+
+            <div class="modal modal-delete fade" id="delmethod" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+
+                            <h4 class="modal-title" id="myModalLabel">
+                                Ask Yourself This
+                            </h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+
+
+                                <div class="col-sm-12 col-md-12 ">
+                                    <div class="form-group">
+                                        <p class="control-label">Do I want to delete this Method of Verification? </p>
+                                        <p class="control-label">Attention !: Any Associated Comments for this Method of Verification will be lost. </p>
+                                        <br />
+                                        <label class="control-label">Comments</label>
+                                        <textarea type="textarea" class="form-control tinymce"></textarea>
+                                        <span class="small text-right counter">0 of 5000 characters remaining</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                   
+                                        <button type="submit" class="btn btn-delete btn-icon btn-danger pull-left btn-waypoint btn-go-forward" data-panel-link="page15"  data-dismiss="modal">
+                                            <span class="icon"></span>
+                                            <span>Delete it</span>
+                                        </button>
+                                   
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    <button type="submit" class="btn btn-default btn-icon btn-stay pull-right" data-dismiss="modal">
+                                        <span>Not Yet</span>
+                                        <span class="icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Updates-->
+
+            <div class="modal modal-delete fade" id="recent-updates" tabindex="-1" role="dialog" aria-labelledby="noResultMdlLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="widget widget-form">
+
+                            <div class="widget-header">
+                                <button type="button" class="close modal-close" data-dismiss="modal">&times;</button>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4>Recent Updates</h4>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="widget-body clearfix">
+                                <div class="form-input-flat">
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table table-bordered table-condensed table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Modified By</th>
+                                                            <th>Modified On</th>
+                                                            <th>Subset</th>
+                                                            <th>Rank</th>
+                                                            <th>Status</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+
+                                                            <td>Sean White</td>
+                                                            <td>14/01/2014</td>
+                                                            <td>UNOI/KAM</td>
+                                                            <td>Lieutanant</td>
+                                                            <td class="status-table-data-color">Validated</td>
+
+
+
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>Sean White</td>
+                                                            <td>13/01/2014</td>
+                                                            <td>UNOI/KAM</td>
+                                                            <td>Lieutanant</td>
+                                                            <td class="status-table-data-color">Pending</td>
+
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>Sean White</td>
+                                                            <td>12/01/2014</td>
+                                                            <td>UNOI/KAM</td>
+                                                            <td>Lieutanant</td>
+                                                            <td class="status-table-data-color">Suspected</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <button type="submit" class="btn btn-default btn-icon btn-close pull-right" data-dismiss="modal">
+                                    <span>Close</span>
+                                    <span class="icon"></span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="footer" class="footer">
+                <span class="pull-right">
+                    <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                        <i class="fa ion-chevron-up"></i> <span class="hidden-xs">Back to Top</span>
+                    </a>
+                </span>
+                &copy; 2016 <b>CAPTOR - Commonwealth of Pennsylvania</b> All Rights Reserved
+            </div>
+
+        </div>
+
+        <div id="sidebar-right" class="sidebar sidebar-right" tabindex="5000" style="overflow: hidden; outline: none;">
+            <div data-scrollbar="true" data-height="100%">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="col-xs-4 no-padding active"><a href="#offender" data-toggle="tab">Offender</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#today" data-toggle="tab">Today</a></li>
+                    <li class="col-xs-4 no-padding"><a href="#notifications" data-toggle="tab">Notifications</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="offender">
+                        <ul class="nav">
+                            <li>
+                                <ul class="nav offender-details-list">
+                                    <li class="offender-img">
+                                        <div class="circle-container">
+                                            <img class="img-responsive" src="../../../Content/img/offender.png" alt="offender-img">
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Offender details</li>
+                                    <li class="sidebar-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <b class="caret pull-right"></b>
+                                            <label class="control-label">Nick Name</label>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li></li>
+                                            <li>“Pistol Pete” Rollack</li>
+                                            <li>Tommy “The Butcher” Pitera</li>
+                                            <li>Kazuo “The Bear” Taoka</li>
+                                            <li>John “White Devil” Willis</li>
+                                            <li>Tony “Big Tuna” Accardo</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label>Full Name </label>
+                                        <span>John Doe</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">DOB </label>
+                                        <span>11/04/1975</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">SID#</label>
+                                        <span>125896</span>
+                                    </li>
+                                    <li class="sidebar-menu-item has-sub">
+                                        <a href="javascript:;">
+                                            <b class="caret pull-right"></b>
+                                            <label class="control-label">DOC#</label>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li>56899734</li>
+                                            <li>56892352</li>
+                                            <li>56823234</li>
+                                            <li>24653456</li>
+                                            <li>45445664</li>
+                                            <li>89787899</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">PBPP#</label>
+                                        <span>P12345</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">FBI#</label>
+                                        <span>458966</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Sex</label>
+                                        <span>Male</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Race</label>
+                                        <span>Hispanic</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Location</label>
+                                        <span>Harrisburg</span>
+                                    </li>
+                                    <li>
+                                        <label class="control-label">Temp. Location</label>
+                                        <span>Camp Hill</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="today">
+                        <ul class="nav">
+                            <li class="nav-date">
+                                Sunday, May 31 st
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Tasks</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa ion-settings"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Your scheduled post has been published</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Aenean lobortis libero libero, vitae imperdiet dolor dictum id.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-shield"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Turn on the firewall</a></div>
+                                            <div class="time"><span>Today, 7.08am</span></div>
+                                            <div class="desc"><span>Donec at augue in mi egestas luctus fermentum et ex.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa ion-person-add"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Added 2 admin user</a></div>
+                                            <div class="time"><span>Today, 6.40am</span></div>
+                                            <div class="desc"><span>Quisque elementum urna placerat mi vestibulum lacinia.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Projects</li>
+                            <li class="nav-project">
+                                <ul class="project-list">
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-success"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">iPhone Apps Development</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" style="width: 60%"></div>
+                                            </div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa fa-circle-o text-danger"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">Website Redesign</a></div>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
+                                            </div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="notifications">
+                        <ul class="nav">
+                            <li class="nav-header">Notifications</li>
+                            <li>
+                                <ul class="notification-list">
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">PHP version updated</a></div>
+                                            <div class="time"><span>Yesterday, 6.06pm</span></div>
+                                            <div class="desc"><span>Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">10 Unknown mysql query detected</a></div>
+                                            <div class="time"><span>Yesterday, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from David</a></div>
+                                            <div class="time"><span>Just now</span></div>
+                                            <div class="desc"><span>Nunc metus orci, lobortis eu luctus quis, dictum mollis ante.</span></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media"><i class="fa fa-check"></i></div>
+                                        <div class="info">
+                                            <div class="title"><a href="javascript:;">New email from Terry</a></div>
+                                            <div class="time"><span>Today, 12.05am</span></div>
+                                            <div class="desc"><span>Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</span></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="nav-header">Calendar</li>
+                            <li>
+                                <div id="schedule-calendar"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-bg sidebar-right"></div>
+
+
+        <!-- Modals Below -->
+
+    </div>
+
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="../../Content/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="../../Content/plugins/moment/moment.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    <script src="../../Content/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!--<script src="../../Content/js/page-calendar.demo.min.js"></script>-->
+
+    <script src="../../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="../../Content/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../Content/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../Content/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+    <script src="../../Content/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../Content/plugins/jquery.nicescroll.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-notify-master/bootstrap-notify.min.js"></script>
+    <script src="../../Content/plugins/jquery.backstretch.js"></script>
+    <script src="../../Content/plugins/jquery.isotope.min.js"></script>
+    <script src="../../Content/js/apps-custom.js"></script>
+    <script src="../../Content/js/apps-alert-ims-notifcation.js"></script>
+    <script src="../../Content/js/apps-form-plugins.js"></script>
+    <script src="../../Content/plugins/tinymce/tinymce.min.js"></script>
+    <script src="../../Content/js/apps-wysiwyg.js"></script>
+    <script src="../../Content/plugins/noframework.waypoints.js"></script>
+    <script src="../../Content/js/apps-waypoint.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            App.init();
+            FormPlugins.init();
+            WYSIWYG.init();
+            AlertNotifications.init();
+            Waypoints.init();
+
+            //Dropdown for Methods of Verification
+
+            $("#method_values li").click(function () {
+                var list_value = this.id;
+
+                if (list_value == 2) {
+                    $(".method_details").text("**Include color photo");
+                }
+                else if (list_value == 3) {
+                    $(".method_details").text("**Including photos, copies, memos, use of colors, hand signals, drawings, etc.");
+                }
+                else if (list_value == 4) {
+                    $(".method_details").text("**Copies of by-laws, ceremonial procedures, rosters, hit lists, address books, etc.");
+                }
+                else if (list_value == 5) {
+                    $(".method_details").text("**Known STG Publications");
+                }
+                else if (list_value == 6) {
+                    $(".method_details").text("**Submitting articles, illustrations, or advertisements in known STG Publications");
+                }
+                else if (list_value == 7) {
+                    $(".method_details").text("**Direct identification as an STG member in PSI, Criminal Compliant, Affidavit of Probable Cause, Proffer, etc.");
+                }
+                else if (list_value == 8) {
+                    $(".method_details").text("**Appears in group photo with other confirmed STG members.");
+                }
+                else if (list_value == 9) {
+                    $(".method_details").text("**Observed routinely walking, eating, recreating, or otherwise directly associating with confirmed STG members");
+                }
+                else if (list_value == 10) {
+                    $(".method_details").text("**Visiting, corresponding, and/or financial transactions with known relatives and close associates of confirmed STG members");
+                }
+                else if (list_value == 11) {
+                    $(".method_details").text("**Verified as reliable by the Intelligence Captain");
+                }
+                else if (list_value == 12) {
+                    $(".method_details").text("**Possession of membership cards, certificates or rank or title, letter of introduction, etc.");
+                }
+                else if (list_value == 13) {
+                    $(".method_details").text("**Interagency intelligence documents or information.");
+                }
+                else if (list_value == 14) {
+                    $(".method_details").text("**News article appearing in legitimate publications or electronic media indicating membership or activity");
+                }
+            });
+
+            // Status Color Change
+
+            var status_dynamic_color = $('.status-dynamic-color').text();
+            $('.status-table-data-color:contains("Pending")').css('color', 'yellow');
+            $('.status-table-data-color:contains("Decertified")').css('color', '#db5565');
+            $('.status-table-data-color:contains("Validated")').css('color', '#47a877');
+            if (status_dynamic_color == "Pending") {
+                $(".status-dynamic-color").css("color", "yellow");
+              }
+            else if (status_dynamic_color == "Decertified") {
+                $(".status-dynamic-color").css("color", "#db5565");
+            }
+            else if (status_dynamic_color == "Validated") {
+                $(".status-dynamic-color").css("color", "#47a877");
+            }
+
+            // init Isotope
+            var $container = $('.isotope').isotope({
+                itemSelector: '.element-item',
+                layoutMode: 'vertical'
+            });
+            // filter functions
+            var filterFns = {
+                // show if number is greater than 50
+                numberGreaterThan50: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 50;
+                },
+                // show if name ends with -ium
+                ium: function () {
+                    var name = $(this).find('.name').text();
+                    return name.match(/ium$/);
+                }
+            };
+            // bind filter button click
+            $('#filters').on('click', 'a', function () {
+                var filterValue = $(this).attr('data-filter');
+                // use filterFn if matches value
+                filterValue = filterFns[filterValue] || filterValue;
+                $container.isotope({ filter: filterValue });
+            });
+            // change is-checked class on buttons
+            $('.timeline-wrapper').each(function (i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', 'a', function () {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+
+
+
+            //add classes dynamically if there are notes present
+            $(function() {
+
+                if ($(".timeline-widget").length == 0) {
+                    $('.filter-by-date').find(".date-range").addClass("hidden");
+                    $('.well').addClass("show");
+                    $('.notes-timeline').addClass("hidden");
+                    $('.widget-header').find(".sticky-timeline").addClass("hidden");
+                    $('.filter-by-date').addClass("no-notes");
+                }else{
+
+                    $('.filter-by-date').find(".date-range").removeClass("hidden");
+                    $('.well').addClass("hidden");
+                    $('.notes-timeline').addClass("show");
+                    $('.widget-header').find(".sticky-timeline").removeClass("hidden");
+                    $('.filter-by-date').removeClass("no-notes");
+
+                }
+
+                //toggle button areas to control the order of buttons and keep them centered
+                if ($(".no-notes").length == 1) {
+                    $('.without-notes').addClass("show");
+                    $('.with-notes').addClass("hidden");
+                } else {
+
+                    $('.without-notes').addClass("hidden");
+                    $('.with-notes').addClass("show");
+
+                }
+
+            })
+
+        });
+    </script>
+</body>
+</html>
